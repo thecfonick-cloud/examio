@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 // Read Google Client ID from environment variables, fallback to format placeholder
-const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '408412300190-613qmead9e3t7izuvopdfbib6lqpq24.apps.googleusercontent.com'
+const GOOGLE_CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID || '406412300190-813qmead9r3il7isovnpdf6ih6lqpq24.apps.googleusercontent.com'
 
 const decodeJwt = (token) => {
   try {
