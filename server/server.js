@@ -540,8 +540,12 @@ app.post('/api/dev/seed', async (req, res) => {
   }
 })
 
-// Start server
-const PORT = process.env.PORT || 5000
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
-})
+// Start server (only if not on Vercel)
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 5000
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`)
+  })
+}
+
+export default app

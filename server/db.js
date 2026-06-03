@@ -3,10 +3,25 @@ import { open } from 'sqlite'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import fs from 'fs'
+
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const dbPath = path.join(__dirname, 'examio.db')
+let dbPath = path.join(__dirname, 'examio.db')
+
+if (process.env.VERCEL) {
+  const tempDbPath = path.join('/tmp', 'examio.db')
+  if (!fs.existsSync(tempDbPath)) {
+    try {
+      fs.copyFileSync(dbPath, tempDbPath)
+      console.log('Copied SQLite database to /tmp for write access on Vercel.')
+    } catch (err) {
+      console.error('Failed to copy SQLite database to /tmp:', err)
+    }
+  }
+  dbPath = tempDbPath
+}
 
 let db = null
 
