@@ -121,9 +121,22 @@ export default function Results({ results, onBackToExams }) {
             >
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-600" />
               
-              <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center mx-auto text-4xl animate-pulse shadow-inner relative">
-                👑
-                <div className="absolute -top-1 -right-1 text-base bg-emerald-500 text-white rounded-full p-1 border-2 border-white">✓</div>
+              <div className="badge-container-3d">
+                <div className="badge-3d">
+                  <div className={`badge-front ${
+                    newLevel === 'Intermediate' ? 'badge-gold' :
+                    newLevel === 'Advanced' ? 'badge-platinum' :
+                    newLevel === 'Elite' ? 'badge-sapphire' : 'badge-ruby'
+                  }`}>
+                    <span className="badge-emblem-icon">
+                      {newLevel === 'Intermediate' ? '👑' :
+                       newLevel === 'Advanced' ? '⭐' :
+                       newLevel === 'Elite' ? '🔮' : '⚔️'}
+                    </span>
+                    <span className="badge-emblem-title">{newLevel}</span>
+                    <span className="badge-emblem-subtitle">Ascended Tier</span>
+                  </div>
+                </div>
               </div>
 
               <h2 className="text-2xl font-black text-slate-900 tracking-tight font-display mt-5">

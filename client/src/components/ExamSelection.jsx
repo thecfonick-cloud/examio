@@ -210,6 +210,14 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
     )
   }
 
+  const getClearedPath = (level) => {
+    if (level === 'Beginner') return ''
+    if (level === 'Intermediate') return 'M 100,50 Q 200,20 300,50'
+    if (level === 'Advanced') return 'M 100,50 Q 200,20 300,50 T 500,50'
+    if (level === 'Elite') return 'M 100,50 Q 200,20 300,50 T 500,50 T 700,50'
+    return 'M 100,50 Q 200,20 300,50 T 500,50 T 700,50 T 900,50' // Challenger
+  }
+
   return (
     <div className="space-y-6 max-w-container-max-width mx-auto px-4 py-6 font-sans select-none">
       
@@ -408,6 +416,45 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
             <h2 className="text-xs font-black uppercase text-slate-550 tracking-wider">3. Journey Pathway & difficulty</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 relative">
+              {/* Connecting Pathway Line for Desktop */}
+              <div className="hidden lg:block absolute left-0 right-0 top-[36px] h-[50px] pointer-events-none z-0">
+                <svg className="w-full h-full" viewBox="0 0 1000 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="unlocked-path-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#10B981" />
+                      <stop offset="100%" stopColor="#4F46E5" />
+                    </linearGradient>
+                    <linearGradient id="locked-path-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#CBD5E1" stopOpacity="0.4" />
+                      <stop offset="100%" stopColor="#94A3B8" stopOpacity="0.15" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Full Track Base Line */}
+                  <path
+                    d="M 100,50 Q 200,20 300,50 T 500,50 T 700,50 T 900,50"
+                    stroke="url(#locked-path-grad)"
+                    strokeWidth="4"
+                    strokeDasharray="6,6"
+                  />
+                  
+                  {/* Active/Cleared Glow Progress Path */}
+                  {user.level !== 'Beginner' && (
+                    <motion.path
+                      d={getClearedPath(user.level)}
+                      stroke="url(#unlocked-path-grad)"
+                      strokeWidth="5"
+                      strokeLinecap="round"
+                      initial={{ pathLength: 0 }}
+                      animate={{ pathLength: 1 }}
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      style={{
+                        filter: 'drop-shadow(0 0 4px rgba(16, 185, 129, 0.4))'
+                      }}
+                    />
+                  )}
+                </svg>
+              </div>
               
               {['Beginner', 'Intermediate', 'Advanced', 'Elite', 'Challenger'].map((diff, index) => {
                 const nodeIndex = `0${index + 1}`
