@@ -54,7 +54,7 @@ async function runSeed() {
 
   const exams = ['SAT']
   const subjectsMap = {
-    SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
+    SAT: ['SAT Mathematics', 'SAT English']
   }
   const difficulties = ['Beginner', 'Intermediate', 'Advanced']
 

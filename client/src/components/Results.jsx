@@ -164,7 +164,7 @@ export default function Results({ results, onBackToExams }) {
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/15 text-indigo-400 text-[10px] font-black uppercase tracking-widest border border-indigo-500/25">
               <Trophy className="h-3.5 w-3.5" /> Combat Mission Completed
             </div>
-            <h2 className="text-2xl md:text-3xl font-black font-display tracking-tight leading-tight">
+            <h2 className="text-2xl md:text-3xl font-black font-display tracking-tight leading-tight text-white">
               {isPerfectScore ? 'Flawless Arena Victory! 🏆' : 'Exam Performance Report'}
             </h2>
             <p className="text-slate-400 text-xs font-semibold">

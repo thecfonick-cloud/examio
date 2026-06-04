@@ -377,7 +377,7 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                       </div>
                       <div>
                         <span className="text-slate-800 block text-xs font-black text-indigo-600">
-                          +{sub === 'SAT Math' ? '40' : '30'} XP
+                          +{sub === 'SAT Mathematics' ? '40' : '30'} XP
                         </span>
                         Reward Rate
                       </div>

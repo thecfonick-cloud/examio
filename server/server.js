@@ -21,7 +21,7 @@ initDb().then(() => {
 
 // Subjects Mapping for Exams
 const EXAM_SUBJECTS = {
-  SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
+  SAT: ['SAT Mathematics', 'SAT English']
 }
 
 // Help helper to calculate the lock time left (24 hours after beginner_completed_at)
@@ -182,11 +182,23 @@ app.get('/api/exams/:examId/questions', async (req, res) => {
       }
     }
 
+    let subjectQuery = 'subject = ?'
+    let subjectParams = [subject]
+
+    if (subject === 'SAT Mathematics') {
+      subjectQuery = '(subject = ? OR subject = ? OR subject = ?)'
+      subjectParams = ['SAT Math', 'SAT Mathematics', 'Math']
+    } else if (subject === 'SAT English') {
+      subjectQuery = '(subject = ? OR subject = ? OR subject = ?)'
+      subjectParams = ['SAT Reading', 'SAT Writing & Language', 'SAT English']
+    }
+
     // Fetch questions from DB (handling Advanced/Elite/Challenger mapping)
     const targetDiff = (difficulty === 'Expert' || difficulty === 'Elite' || difficulty === 'Challenger') ? 'Advanced' : difficulty
     const questions = await db.all(
-      'SELECT id, exam_id, subject, difficulty, question_text, options FROM questions WHERE exam_id = ? AND subject = ? AND (difficulty = ? OR difficulty = ?)',
-      [examId, subject, targetDiff, targetDiff === 'Advanced' ? 'Expert' : 'Advanced']
+      `SELECT id, exam_id, subject, difficulty, question_text, options FROM questions 
+       WHERE exam_id = ? AND ${subjectQuery} AND (difficulty = ? OR difficulty = ?)`,
+      [examId, ...subjectParams, targetDiff, targetDiff === 'Advanced' ? 'Expert' : 'Advanced']
     )
 
     // Format options as JSON array, and hide answers/explanations from network
@@ -221,11 +233,22 @@ app.post('/api/exams/submit', async (req, res) => {
       return res.status(404).json({ error: 'User not found' })
     }
 
+    let subjectQuery = 'subject = ?'
+    let subjectParams = [subject]
+
+    if (subject === 'SAT Mathematics') {
+      subjectQuery = '(subject = ? OR subject = ? OR subject = ?)'
+      subjectParams = ['SAT Math', 'SAT Mathematics', 'Math']
+    } else if (subject === 'SAT English') {
+      subjectQuery = '(subject = ? OR subject = ? OR subject = ?)'
+      subjectParams = ['SAT Reading', 'SAT Writing & Language', 'SAT English']
+    }
+
     const targetDiff = (difficulty === 'Expert' || difficulty === 'Elite' || difficulty === 'Challenger') ? 'Advanced' : difficulty
     // Fetch full questions to score
     const questions = await db.all(
-      'SELECT * FROM questions WHERE exam_id = ? AND subject = ? AND difficulty = ?',
-      [examId, subject, targetDiff]
+      `SELECT * FROM questions WHERE exam_id = ? AND ${subjectQuery} AND difficulty = ?`,
+      [examId, ...subjectParams, targetDiff]
     )
 
     if (questions.length === 0) {
@@ -478,10 +501,10 @@ app.post('/api/dev/seed', async (req, res) => {
     const firstNames = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth', 'David', 'Barbara', 'Richard', 'Susan', 'Joseph', 'Jessica', 'Thomas', 'Sarah', 'Charles', 'Karen', 'Christopher', 'Lisa', 'Daniel', 'Nancy', 'Matthew', 'Betty', 'Anthony', 'Sandra', 'Mark', 'Margaret', 'Donald', 'Ashley', 'Steven', 'Kimberly', 'Paul', 'Emily', 'Andrew', 'Donna', 'Joshua', 'Michelle', 'Kenneth', 'Carol', 'Kevin', 'Amanda', 'Brian', 'Melissa', 'George', 'Deborah', 'Timothy', 'Stephanie']
     const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin', 'Lee', 'Perez', 'Thompson', 'White', 'Harris', 'Sanchez', 'Clark', 'Ramirez', 'Lewis', 'Robinson', 'Walker', 'Young', 'Allen', 'King', 'Wright', 'Scott', 'Torres', 'Nguyen', 'Hill', 'Flores', 'Green', 'Adams', 'Nelson', 'Baker', 'Hall', 'Rivera', 'Campbell', 'Mitchell', 'Carter', 'Roberts']
 
-    const exams = ['SAT']
-    const subjectsMap = {
-      SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
-    }
+     const exams = ['SAT']
+     const subjectsMap = {
+       SAT: ['SAT Mathematics', 'SAT English']
+     }
     const difficulties = ['Beginner', 'Intermediate', 'Advanced']
 
     const mockUsers = []
