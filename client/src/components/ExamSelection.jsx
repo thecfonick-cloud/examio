@@ -214,7 +214,7 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
     <div className="space-y-6 max-w-container-max-width mx-auto px-4 py-6 font-sans select-none">
       
       {/* 1. Large Premium Hero Banner - SAT Command Center */}
-      <div className="welcome-banner-premium relative overflow-hidden rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-premium border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white">
+      <div className="welcome-banner-premium relative overflow-hidden rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-premium border border-indigo-150 text-indigo-950">
         <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
         
@@ -224,40 +224,40 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
             {user.name ? user.name.split(' ').map(n=>n[0]).join('').slice(0,2) : 'A'}
           </div>
           <div className="space-y-3 flex-1">
-            <div className="inline-flex items-center gap-1.5 text-[10px] font-black text-cyan-400 uppercase tracking-widest bg-cyan-950/50 border border-cyan-900/40 px-3 py-1 rounded-full">
-              <Zap className="h-3 w-3 shrink-0 text-cyan-400" /> SAT COMMAND CENTER ACTIVE
+            <div className="inline-flex items-center gap-1.5 text-[10px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full">
+              <Zap className="h-3 w-3 shrink-0 text-indigo-600" /> SAT COMMAND CENTER ACTIVE
             </div>
-            <h1 className="text-2xl md:text-3xl font-black tracking-tight text-white font-display">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tight text-indigo-900 font-display">
               Welcome back, {user.name}! 🎓
             </h1>
             
             {/* Real-time stats grid in banner */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
-                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Global SAT Rank</span>
-                <span className="text-xs font-black text-white block mt-0.5">#1,425 <span className="text-[9px] text-emerald-400 font-extrabold">▲4</span></span>
+              <div className="bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-indigo-100/50">
+                <span className="text-[8px] font-black text-slate-500 block uppercase tracking-wider">Global SAT Rank</span>
+                <span className="text-xs font-black text-indigo-950 block mt-0.5">#1,425 <span className="text-[9px] text-emerald-600 font-extrabold">▲4</span></span>
               </div>
-              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
-                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Competitor Tier</span>
-                <span className="text-xs font-black text-cyan-400 block mt-0.5">{user.level}</span>
+              <div className="bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-indigo-100/50">
+                <span className="text-[8px] font-black text-slate-500 block uppercase tracking-wider">Competitor Tier</span>
+                <span className="text-xs font-black text-cyan-650 block mt-0.5">{user.level}</span>
               </div>
-              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
-                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Arena Accuracy</span>
-                <span className="text-xs font-black text-indigo-400 block mt-0.5">{averageAccuracy || '0'}%</span>
+              <div className="bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-indigo-100/50">
+                <span className="text-[8px] font-black text-slate-500 block uppercase tracking-wider">Arena Accuracy</span>
+                <span className="text-xs font-black text-indigo-650 block mt-0.5">{averageAccuracy || '0'}%</span>
               </div>
-              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
-                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Daily Streak</span>
-                <span className="text-xs font-black text-amber-500 block mt-0.5">🔥 {streakDays || '5'} Days</span>
+              <div className="bg-white/60 backdrop-blur-xs p-3 rounded-xl border border-indigo-100/50">
+                <span className="text-[8px] font-black text-slate-500 block uppercase tracking-wider">Daily Streak</span>
+                <span className="text-xs font-black text-amber-600 block mt-0.5">🔥 {streakDays || '5'} Days</span>
               </div>
             </div>
 
             {/* Progression details */}
             <div className="space-y-1.5 pt-2">
-              <div className="flex justify-between text-[9px] font-black text-slate-300 uppercase tracking-wider">
+              <div className="flex justify-between text-[9px] font-black text-slate-600 uppercase tracking-wider">
                 <span>XP Level Progression: {user.xp} XP</span>
-                <span className="text-cyan-400">Next Target: {progress.label} ({progress.nextXp} XP)</span>
+                <span className="text-cyan-650">Next Target: {progress.label} ({progress.nextXp} XP)</span>
               </div>
-              <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-850">
+              <div className="w-full h-2 bg-indigo-50 rounded-full overflow-hidden border border-indigo-100/60">
                 <div 
                   className="h-full glow-bar-fill rounded-full"
                   style={{ width: `${progress.percent}%` }}
