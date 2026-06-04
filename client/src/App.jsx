@@ -6,7 +6,7 @@ import Results from './components/Results.jsx'
 import Leaderboard from './components/Leaderboard.jsx'
 import StatsView from './components/StatsView.jsx'
 import ProfileDrawer from './components/ProfileDrawer.jsx'
-import { AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Menu } from 'lucide-react'
 
 export default function App() {
@@ -29,14 +29,14 @@ export default function App() {
   const [easterEggError, setEasterEggError] = useState('')
   const [showEasterEggSuccess, setShowEasterEggSuccess] = useState(false)
 
-  const slidesImages = ['/hero1.png', '/hero2.png', '/hero3.jpg']
+  const slidesImages = ['/hero1.png', '/hero2.png', '/hero3.png', '/hero4.png']
 
   // Hero slideshow interval
   useEffect(() => {
     if (user) return
     const interval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % slidesImages.length)
-    }, 5500)
+    }, 4500)
     return () => clearInterval(interval)
   }, [user])
 
@@ -145,49 +145,69 @@ export default function App() {
     return (
       <div style={{ marginTop: '64px' }} className="premium-bg-mesh">
         {/* Landing Hero */}
-        <section className="landing-hero">
+        <section className="landing-hero-split max-w-7xl mx-auto py-12 px-6 lg:py-20 flex flex-col lg:flex-row items-center gap-12 z-10 relative">
           <div className="radial-orb radial-orb-cyan -top-20 -left-20 w-[450px] h-[450px]" />
           <div className="radial-orb radial-orb-indigo -bottom-20 -right-20 w-[550px] h-[550px]" />
           
-          <div className="max-w-container-max-width mx-auto text-center z-10 hero-content reveal active px-4">
-            <h1 className="hero-title heading-heavy tracking-tighter text-white">The Global SAT Competition Arena</h1>
-            <p className="hero-subtitle text-slate-100 max-w-2xl mx-auto my-6 text-sm md:text-base leading-relaxed">
-              Compete against SAT aspirants worldwide, climb live rankings, master every section, and rise through elite challenge tiers.
+          {/* Left Column: Heading and CTAs */}
+          <div className="flex-1 text-left space-y-6 z-10 hero-text-area">
+            <h1 className="hero-title-split text-slate-900 font-extrabold tracking-tight leading-none">
+              The Global <span className="bg-gradient-to-r from-indigo-650 to-cyan-500 bg-clip-text text-transparent">SAT Competition</span> Arena
+            </h1>
+            <p className="hero-subtitle-split text-slate-650 text-sm md:text-base leading-relaxed max-w-xl">
+              Compete against SAT competitors worldwide, climb live rankings, master every section, and rise through elite challenge tiers.
             </p>
             
-            {/* Live Global Social Proof Metrics Row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto my-8 px-2">
-              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
-                <div className="text-xl md:text-2xl font-black text-white font-display">124,000+</div>
-                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Challenges Completed</div>
-              </div>
-              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
-                <div className="text-xl md:text-2xl font-black text-cyan-400 font-display">42</div>
-                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Countries Active</div>
-              </div>
-              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
-                <div className="text-xl md:text-2xl font-black text-indigo-400 font-display">12,842</div>
-                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Competitors Online</div>
-              </div>
-              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
-                <div className="text-xl md:text-2xl font-black text-emerald-400 font-display">1.2M+</div>
-                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Questions Solved</div>
-              </div>
-            </div>
-
-            <div className="hero-buttons flex flex-wrap justify-center gap-4 mt-6">
+            <div className="flex flex-wrap gap-4 pt-2">
               <button
-                className="btn-hero-primary btn-premium-action"
+                className="btn-hero-primary-split btn-premium-action px-6 py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
               >
                 Enter Command Center
               </button>
               <button
-                className="btn-hero-secondary"
+                className="btn-hero-secondary-split px-6 py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
               >
                 Start Competing
               </button>
+            </div>
+          </div>
+          
+          {/* Right Column: Sliding Image Mockup */}
+          <div className="flex-1 w-full max-w-lg lg:max-w-none relative z-10 flex items-center justify-center">
+            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-205 bg-slate-900/10 backdrop-blur-sm">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSlide}
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <img
+                    src={slidesImages[currentSlide]}
+                    alt="SAT Prep Showcase"
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Subtle dark overlay for premium feel */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
+                </motion.div>
+              </AnimatePresence>
+              
+              {/* Slideshow Progress Dots */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-slate-900/40 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/10">
+                {slidesImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentSlide(idx)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      currentSlide === idx ? 'bg-cyan-400 w-5' : 'bg-white/60 hover:bg-white'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -270,27 +290,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="stats-section-bg" id="stats">
-          <div className="stats-grid">
-            <div className="stat-item reveal">
-              <div className="stat-number">900+</div>
-              <div className="stat-label">Practice Questions</div>
-            </div>
-            <div className="stat-item reveal">
-              <div className="stat-number">12.4K+</div>
-              <div className="stat-label">Active Fighters</div>
-            </div>
-            <div className="stat-item reveal">
-              <div className="stat-number">3</div>
-              <div className="stat-label">Core SAT Sections</div>
-            </div>
-            <div className="stat-item reveal">
-              <div className="stat-number">0.05s</div>
-              <div className="stat-label">Rank Sync Latency</div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Testimonials Section */}
         <section className="landing-section" id="testimonials">
