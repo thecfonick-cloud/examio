@@ -173,13 +173,13 @@ export default function App() {
                 className="px-8 py-3.5 md:px-10 md:py-4 bg-white text-indigo-750 rounded-xl font-black text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-95 cursor-pointer hover:bg-slate-50"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
               >
-                Enter Command Center
+                Sign In
               </button>
               <button
                 className="px-8 py-3.5 md:px-10 md:py-4 border-2 border-white text-white rounded-xl font-black text-sm uppercase tracking-wider hover:bg-white/10 transition-all duration-300 active:scale-95 cursor-pointer"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
               >
-                Start Competing
+                Sign Up
               </button>
             </div>
           </div>
@@ -400,13 +400,13 @@ export default function App() {
                   className="btn-header-login"
                   onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
                 >
-                  Enter Command Center
+                  Sign In
                 </button>
                 <button
                   className="btn-header-register btn-premium-action"
                   onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
                 >
-                  Start Competing
+                  Sign Up
                 </button>
               </div>
             </>
