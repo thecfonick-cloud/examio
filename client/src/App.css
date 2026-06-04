@@ -306,75 +306,57 @@
   text-align: center;
 }
 
-.landing-hero-split {
-  position: relative;
-  min-height: calc(90vh - 64px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.hero-slideshow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  z-index: 0;
 }
 
-.hero-title-split {
-  font-size: 3.5rem;
-  font-weight: 850;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
-  color: #0F172A;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.82) 0%, rgba(6, 182, 212, 0.82) 100%);
+  z-index: 2;
 }
 
-.hero-subtitle-split {
-  color: #475569;
-  font-size: 1.15rem;
-  line-height: 1.6;
-  max-width: 580px;
-}
-
-.btn-hero-primary-split {
-  padding: 0.9rem 2.25rem;
-  border-radius: var(--radius-md);
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.btn-hero-secondary-split {
-  border: 2px solid var(--primary);
-  color: var(--primary);
-  background: transparent;
-  padding: 0.9rem 2.25rem;
-  border-radius: var(--radius-md);
-  font-weight: 800;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all var(--transition-fast);
-}
-
-.btn-hero-secondary-split:hover {
-  background-color: var(--primary-light);
-  transform: translateY(-1px);
+.hero-content {
+  position: relative;
+  z-index: 10;
 }
 
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: 3.75rem;
+  font-weight: 900;
   letter-spacing: -0.03em;
   color: white;
   margin-bottom: 1.5rem;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  line-height: 1.1;
 }
 
 .hero-subtitle {
   color: rgba(255, 255, 255, 0.95);
   font-size: 1.25rem;
-  max-width: 640px;
+  max-width: 680px;
   margin: 0 auto 2.5rem auto;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   line-height: 1.6;
 }
+
+
 
 .hero-buttons {
   display: flex;

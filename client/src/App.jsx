@@ -143,73 +143,49 @@ export default function App() {
   // Render Landing Page for Logged-Out Users
   const renderLandingPage = () => {
     return (
-      <div style={{ marginTop: '64px' }} className="premium-bg-mesh">
-        {/* Landing Hero */}
-        <section className="landing-hero-split max-w-7xl mx-auto py-12 px-6 lg:py-20 flex flex-col lg:flex-row items-center gap-12 z-10 relative">
-          <div className="radial-orb radial-orb-cyan -top-20 -left-20 w-[450px] h-[450px]" />
-          <div className="radial-orb radial-orb-indigo -bottom-20 -right-20 w-[550px] h-[550px]" />
+      <div style={{ marginTop: '64px' }}>
+        {/* Landing Hero with Background Slideshow (NursePathNG style) */}
+        <section className="relative min-h-[600px] md:min-h-[800px] flex items-center justify-center overflow-hidden landing-hero">
           
-          {/* Left Column: Heading and CTAs */}
-          <div className="flex-1 text-left space-y-6 z-10 hero-text-area">
-            <h1 className="hero-title-split text-slate-900 font-extrabold tracking-tight leading-none">
-              The Global <span className="bg-gradient-to-r from-indigo-650 to-cyan-500 bg-clip-text text-transparent">SAT Competition</span> Arena
+          {/* Background Slideshow */}
+          <div className="hero-slideshow absolute inset-0 z-0">
+            {slidesImages.map((img, idx) => (
+              <div
+                key={img}
+                className={`hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                  currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+                style={{ backgroundImage: `url(${img})` }}
+              />
+            ))}
+            <div className="hero-overlay" />
+          </div>
+
+          {/* Hero Content Overlay */}
+          <div className="max-w-container-max-width mx-auto text-center z-10 py-16 md:py-24 px-4 relative hero-content flex flex-col items-center">
+            <h1 className="hero-title heading-heavy tracking-tighter text-white">
+              The Global SAT Competition Arena
             </h1>
-            <p className="hero-subtitle-split text-slate-650 text-sm md:text-base leading-relaxed max-w-xl">
+            <p className="hero-subtitle text-white/95 max-w-2xl mx-auto my-6 text-sm md:text-base leading-relaxed">
               Compete against SAT competitors worldwide, climb live rankings, master every section, and rise through elite challenge tiers.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="hero-buttons flex flex-wrap justify-center gap-4 mt-6">
               <button
-                className="btn-hero-primary-split btn-premium-action px-6 py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all"
+                className="px-8 py-3.5 md:px-10 md:py-4 bg-white text-indigo-750 rounded-xl font-black text-sm uppercase tracking-wider shadow-xl hover:shadow-2xl transition-all duration-300 active:scale-95 cursor-pointer hover:bg-slate-50"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
               >
                 Enter Command Center
               </button>
               <button
-                className="btn-hero-secondary-split px-6 py-3.5 rounded-xl font-extrabold text-xs uppercase tracking-wider transition-all"
+                className="px-8 py-3.5 md:px-10 md:py-4 border-2 border-white text-white rounded-xl font-black text-sm uppercase tracking-wider hover:bg-white/10 transition-all duration-300 active:scale-95 cursor-pointer"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
               >
                 Start Competing
               </button>
             </div>
           </div>
-          
-          {/* Right Column: Sliding Image Mockup */}
-          <div className="flex-1 w-full max-w-lg lg:max-w-none relative z-10 flex items-center justify-center">
-            <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-205 bg-slate-900/10 backdrop-blur-sm">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.8 }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <img
-                    src={slidesImages[currentSlide]}
-                    alt="SAT Prep Showcase"
-                    className="w-full h-full object-cover"
-                  />
-                  {/* Subtle dark overlay for premium feel */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent pointer-events-none" />
-                </motion.div>
-              </AnimatePresence>
-              
-              {/* Slideshow Progress Dots */}
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-slate-900/40 backdrop-blur-md px-3.5 py-2 rounded-full border border-white/10">
-                {slidesImages.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setCurrentSlide(idx)}
-                    className={`w-2.5 h-2.5 rounded-full transition-all ${
-                      currentSlide === idx ? 'bg-cyan-400 w-5' : 'bg-white/60 hover:bg-white'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+          <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-white to-transparent z-10" />
         </section>
 
         {/* Features Section */}
