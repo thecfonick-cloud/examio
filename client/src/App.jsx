@@ -152,9 +152,7 @@ export default function App() {
             {slidesImages.map((img, idx) => (
               <div
                 key={img}
-                className={`hero-slide absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                  currentSlide === idx ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                }`}
+                className={`hero-slide ${currentSlide === idx ? 'active-slide' : ''}`}
                 style={{ backgroundImage: `url(${img})` }}
               />
             ))}
@@ -395,17 +393,7 @@ export default function App() {
           {!user ? (
             // Logged Out Header links
             <>
-              {/* Glass Topbar Ticker */}
-              <div className="hidden lg:flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-100/90 px-4 py-2 rounded-full border border-slate-200/50">
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <strong className="text-slate-800">12,842</strong> competitors online
-                </span>
-                <span className="text-slate-350">|</span>
-                <span className="flex items-center gap-1.5">
-                  <strong className="text-slate-800">124,000</strong> SAT challenges completed
-                </span>
-              </div>
+
 
               <div className="header-actions">
                 <button

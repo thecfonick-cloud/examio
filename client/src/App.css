@@ -325,6 +325,11 @@
   z-index: 0;
 }
 
+.hero-slide.active-slide {
+  opacity: 1;
+  z-index: 1;
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;
