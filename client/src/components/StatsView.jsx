@@ -59,7 +59,7 @@ function AccuracyCurve({ history }) {
   
   return (
     <div className="relative bg-white p-5 rounded-xl border border-slate-100 shadow-sm w-full">
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 mb-3">
         <span className="text-[10px] font-black text-slate-500 uppercase tracking-wider">Accuracy Progression Curve</span>
         <span className="text-emerald-500 font-extrabold text-[10px] bg-emerald-55 px-1.5 py-0.5 rounded">Target: 80%+</span>
       </div>
@@ -133,7 +133,7 @@ function XpGrowthTimeline({ history, userXp }) {
   
   return (
     <div className="relative bg-white p-5 rounded-xl border border-slate-100 shadow-sm w-full">
-      <div className="flex justify-between items-center mb-3">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 mb-3">
         <span className="text-[10px] font-black text-slate-500 uppercase tracking-wider">XP Growth Timeline</span>
         <span className="text-indigo-500 font-extrabold text-[10px] bg-indigo-55 px-1.5 py-0.5 rounded">Active Growth</span>
       </div>
@@ -214,7 +214,7 @@ function ActivityHeatMap({ history, userId }) {
   return (
     <div className="premium-card p-6 text-left relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-teal-400 to-indigo-500" />
-      <div className="flex justify-between items-center mb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 mb-4">
         <div>
           <h3 className="text-xs font-black uppercase text-slate-800 tracking-wider">Weekly Activity Matrix</h3>
           <p className="text-[9px] text-slate-550 font-bold uppercase tracking-wide">Daily Arena Participation (Past 16 Weeks)</p>
@@ -577,11 +577,11 @@ export default function StatsView({ user }) {
               ) : (
                 resultsHistory.map((res) => (
                   <div key={res.id} className="p-3.5 border border-slate-150 rounded-xl space-y-2 text-left bg-slate-50/50 hover:bg-slate-50 transition-colors">
-                    <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-wide">
-                      <span className="text-slate-800">{res.exam_id} {res.subject}</span>
-                      <span className="text-indigo-600 font-black">+{res.xp_earned} XP</span>
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 text-[10px] font-black uppercase tracking-wide">
+                      <span className="text-slate-800 break-words">{res.exam_id} {res.subject}</span>
+                      <span className="text-indigo-600 font-black shrink-0">+{res.xp_earned} XP</span>
                     </div>
-                    <div className="flex justify-between text-[9px] text-slate-600 font-semibold">
+                    <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 text-[9px] text-slate-600 font-semibold border-t border-slate-150/50 pt-1.5">
                       <span>Difficulty: {res.difficulty}</span>
                       <span>Accuracy Score: <strong className="text-indigo-600 font-extrabold">{res.accuracy}%</strong></span>
                     </div>

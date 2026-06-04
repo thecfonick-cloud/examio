@@ -221,7 +221,7 @@ export default function TestEngine({ user, examId, subject, difficulty, onSubmit
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start my-6 flex-1">
         
         {/* Left Side Pane: Question Deck */}
-        <aside className="lg:col-span-1 bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-6 flex flex-col justify-between">
+        <aside className="order-2 lg:order-1 lg:col-span-1 bg-slate-900/40 border border-slate-800 rounded-2xl p-5 space-y-6 flex flex-col justify-between">
           <div className="space-y-4">
             <div className="text-[10px] font-black uppercase tracking-widest text-slate-500">Question Deck</div>
             
@@ -266,7 +266,7 @@ export default function TestEngine({ user, examId, subject, difficulty, onSubmit
         </aside>
 
         {/* Right Pane: Central Question Block */}
-        <main className="lg:col-span-3 space-y-6 flex flex-col h-full justify-between">
+        <main className="order-1 lg:order-2 lg:col-span-3 space-y-6 flex flex-col h-full justify-between">
           
           <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 space-y-6 flex-1 flex flex-col justify-center">
             

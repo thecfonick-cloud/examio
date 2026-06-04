@@ -416,6 +416,9 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
             <h2 className="text-xs font-black uppercase text-slate-550 tracking-wider">3. Journey Pathway & difficulty</h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 relative">
+              {/* Connecting Pathway Line for Mobile */}
+              <div className="block lg:hidden absolute left-1/2 -translate-x-1/2 top-[40px] bottom-[40px] w-0.5 border-l-2 border-dashed border-slate-300 pointer-events-none z-0 opacity-60" />
+              
               {/* Connecting Pathway Line for Desktop */}
               <div className="hidden lg:block absolute left-0 right-0 top-[36px] h-[50px] pointer-events-none z-0">
                 <svg className="w-full h-full" viewBox="0 0 1000 100" fill="none" xmlns="http://www.w3.org/2000/svg">

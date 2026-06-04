@@ -116,7 +116,7 @@ export default function Results({ results, onBackToExams }) {
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0, transition: { type: 'spring', stiffness: 100 } }}
               exit={{ scale: 0.9, y: 20 }}
-              className="bg-white rounded-3xl p-8 max-w-lg text-center relative overflow-hidden shadow-2xl border border-indigo-100"
+              className="bg-white rounded-3xl p-8 max-w-lg text-center relative overflow-hidden shadow-2xl border border-indigo-100 max-h-[90vh] overflow-y-auto"
               onClick={e => e.stopPropagation()}
             >
               <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-indigo-500 via-cyan-400 to-indigo-600" />
