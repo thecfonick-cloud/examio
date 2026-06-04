@@ -272,7 +272,7 @@ app.post('/api/exams/submit', async (req, res) => {
     // Progression Updates
     let newLevel = user.level
     let beginnerCompletedAt = user.beginner_completed_at
-    const passed = accuracy >= 50
+    const passed = difficulty === 'Beginner' ? (accuracy >= 60) : (accuracy >= 50)
 
     if (difficulty === 'Beginner') {
       beginnerCompletedAt = new Date().toISOString()

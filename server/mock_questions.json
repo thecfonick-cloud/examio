@@ -628,5 +628,215 @@
     },
     "correctAnswer": "B",
     "explanation": "Use 'than' for comparative expressions ('later than'), whereas 'then' refers to time/sequence."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "Solve for x: 3x + 5 = 20",
+    "options": {
+      "A": "3",
+      "B": "5",
+      "C": "10",
+      "D": "15"
+    },
+    "correctAnswer": "B",
+    "explanation": "Subtract 5 from both sides: 3x = 15, then divide by 3."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "What is 25% of 200?",
+    "options": {
+      "A": "25",
+      "B": "50",
+      "C": "75",
+      "D": "100"
+    },
+    "correctAnswer": "B",
+    "explanation": "25% means 25/100. Multiply 200 × 0.25 = 50."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "If a triangle has angles 60° and 50°, what is the third angle?",
+    "options": {
+      "A": "60°",
+      "B": "70°",
+      "C": "80°",
+      "D": "90°"
+    },
+    "correctAnswer": "B",
+    "explanation": "Angles in a triangle add up to 180°."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "What is the value of 7²?",
+    "options": {
+      "A": "14",
+      "B": "21",
+      "C": "49",
+      "D": "64"
+    },
+    "correctAnswer": "C",
+    "explanation": "7² means 7 × 7."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "A train travels 60 miles in 2 hours. What is its average speed?",
+    "options": {
+      "A": "20 mph",
+      "B": "30 mph",
+      "C": "40 mph",
+      "D": "60 mph"
+    },
+    "correctAnswer": "B",
+    "explanation": "Average speed = distance ÷ time."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "Choose the word closest in meaning to 'rapid'.",
+    "options": {
+      "A": "Slow",
+      "B": "Fast",
+      "C": "Weak",
+      "D": "Late"
+    },
+    "correctAnswer": "B",
+    "explanation": "'Rapid' means very fast."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "What is the main purpose of a conclusion paragraph?",
+    "options": {
+      "A": "Introduce a topic",
+      "B": "Summarize ideas",
+      "C": "Give examples",
+      "D": "Ask questions"
+    },
+    "correctAnswer": "B",
+    "explanation": "A conclusion summarizes the main points."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "Which sentence is a fact?",
+    "options": {
+      "A": "Chocolate ice cream is the best.",
+      "B": "Cats are better than dogs.",
+      "C": "The Earth revolves around the Sun.",
+      "D": "Summer is boring."
+    },
+    "correctAnswer": "C",
+    "explanation": "Facts can be proven true."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "What does the word 'predict' mean?",
+    "options": {
+      "A": "Forget",
+      "B": "Guess ahead",
+      "C": "Describe",
+      "D": "Compare"
+    },
+    "correctAnswer": "B",
+    "explanation": "Predict means to say what may happen in the future."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "What is the synonym of 'honest'?",
+    "options": {
+      "A": "Truthful",
+      "B": "Angry",
+      "C": "Quiet",
+      "D": "Careless"
+    },
+    "correctAnswer": "A",
+    "explanation": "'Honest' means truthful and sincere."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the correct sentence.",
+    "options": {
+      "A": "She go to school every day.",
+      "B": "She goes to school every day.",
+      "C": "She going to school every day.",
+      "D": "She gone to school every day."
+    },
+    "correctAnswer": "B",
+    "explanation": "Singular subjects require singular verbs."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Which punctuation correctly completes the sentence: 'I enjoy reading ___ writing, and painting.'",
+    "options": {
+      "A": ";",
+      "B": ":",
+      "C": ",",
+      "D": "."
+    },
+    "correctAnswer": "C",
+    "explanation": "Commas separate items in a list."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the correctly spelled word.",
+    "options": {
+      "A": "Definately",
+      "B": "Definetely",
+      "C": "Definitely",
+      "D": "Definatly"
+    },
+    "correctAnswer": "C",
+    "explanation": "'Definitely' is the correct spelling."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Which sentence is grammatically correct?",
+    "options": {
+      "A": "Their going to the park.",
+      "B": "They're going to the park.",
+      "C": "There going to the park.",
+      "D": "Theyre going to the park."
+    },
+    "correctAnswer": "B",
+    "explanation": "'They're' means 'they are'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "What is the purpose of a topic sentence?",
+    "options": {
+      "A": "To end a paragraph",
+      "B": "To explain grammar",
+      "C": "To introduce the main idea",
+      "D": "To list sources"
+    },
+    "correctAnswer": "C",
+    "explanation": "A topic sentence presents the main idea of a paragraph."
   }
 ]

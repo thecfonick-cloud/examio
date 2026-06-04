@@ -583,7 +583,7 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                     <ShieldAlert className="h-4 w-4 shrink-0 text-amber-400" /> Progression Requirements
                   </div>
                   <ul className="list-disc list-inside space-y-1 leading-relaxed text-slate-350">
-                    <li>Passing (score accuracy &ge; 50%) is compulsory to level up to the next tier.</li>
+                    <li>Passing a Beginner exam requires &ge; 60% accuracy to level up (other tiers require &ge; 50%).</li>
                     <li>Completing a <strong>Beginner</strong> exam locks all tests for <strong>24 hours</strong>.</li>
                   </ul>
                 </div>

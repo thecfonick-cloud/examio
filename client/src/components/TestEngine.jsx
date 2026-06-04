@@ -12,6 +12,18 @@ export default function TestEngine({ user, examId, subject, difficulty, onSubmit
   const [submitConfirm, setSubmitConfirm] = useState(false)
   const [submitting, setSubmitting] = useState(false)
 
+  const [questionMappings, setQuestionMappings] = useState({})
+
+  // Shuffle utility
+  const shuffleArray = (array) => {
+    const arr = [...array]
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr
+  }
+
   useEffect(() => {
     async function loadQuestions() {
       try {
@@ -20,7 +32,32 @@ export default function TestEngine({ user, examId, subject, difficulty, onSubmit
         )
         const data = await response.json()
         if (response.ok) {
-          setQuestions(data)
+          // 1. Shuffle question order dynamically
+          const shuffledQuestions = shuffleArray(data)
+          
+          // 2. Shuffle options dynamically for each question
+          const maps = {}
+          shuffledQuestions.forEach(q => {
+            const entries = Object.entries(q.options || {})
+            const keys = entries.map(e => e[0])
+            const values = entries.map(e => e[1])
+            
+            const shuffledValues = shuffleArray(values)
+            const displayOptions = {}
+            const originalKeyMap = {}
+            
+            keys.forEach((key, index) => {
+              const val = shuffledValues[index]
+              displayOptions[key] = val
+              const origEntry = entries.find(e => e[1] === val)
+              originalKeyMap[key] = origEntry ? origEntry[0] : key
+            })
+            
+            maps[q.id] = { displayOptions, originalKeyMap }
+          })
+          
+          setQuestionMappings(maps)
+          setQuestions(shuffledQuestions)
           // Set 120 seconds per question (minimum 3 minutes)
           const duration = Math.max(data.length * 120, 180)
           setTimeLeft(duration)
@@ -244,13 +281,18 @@ export default function TestEngine({ user, examId, subject, difficulty, onSubmit
 
             {/* MCQ Option selector lists */}
             <div className="space-y-3 pt-2">
-              {Object.entries(currentQuestion.options || {}).map(([letter, opt]) => {
-                const isSelected = answers[currentQuestion.id] === letter
+              {Object.entries(
+                (questionMappings[currentQuestion.id] && questionMappings[currentQuestion.id].displayOptions) ||
+                currentQuestion.options ||
+                {}
+              ).map(([letter, opt]) => {
+                const originalKey = (questionMappings[currentQuestion.id] && questionMappings[currentQuestion.id].originalKeyMap[letter]) || letter
+                const isSelected = answers[currentQuestion.id] === originalKey
                 
                 return (
                   <button
                     key={letter}
-                    onClick={() => handleOptionSelect(currentQuestion.id, letter)}
+                    onClick={() => handleOptionSelect(currentQuestion.id, originalKey)}
                     className={`w-full text-left p-4 rounded-xl border transition-all flex items-center gap-3 text-xs md:text-sm font-bold select-none relative group ${
                       isSelected 
                         ? 'bg-indigo-500/10 border-indigo-500 text-indigo-400 ring-2 ring-indigo-500/10 shadow-[0_0_15px_rgba(79,70,229,0.1)]' 
