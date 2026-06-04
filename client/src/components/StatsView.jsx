@@ -506,8 +506,8 @@ export default function StatsView({ user }) {
                 </span>
               )}
             </div>
-            <h4 className="text-xs font-black uppercase tracking-wide font-display mt-3">Tactical Mission</h4>
-            <p className="text-[11px] text-white/95 leading-relaxed font-semibold mt-1">
+            <h4 className="text-xs font-black uppercase tracking-wide font-display mt-3 text-white">Tactical Mission</h4>
+            <p className="text-[11px] text-slate-100 leading-relaxed font-semibold mt-1">
               Score <span className="underline font-black">80%+</span> on any CBT arena challenge today to claim a massive <span className="font-black text-cyan-200">+30 XP</span> victory bonus.
             </p>
           </div>
