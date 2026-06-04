@@ -211,33 +211,53 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
   }
 
   return (
-    <div className="space-y-8 max-w-4xl mx-auto px-4 py-8 font-sans select-none">
+    <div className="space-y-6 max-w-container-max-width mx-auto px-4 py-6 font-sans select-none">
       
-      {/* 1. Large Premium Hero Banner */}
-      <div className="welcome-banner-premium relative overflow-hidden rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row justify-between items-center gap-8">
-        <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/5 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-cyan-500/5 blur-3xl pointer-events-none" />
+      {/* 1. Large Premium Hero Banner - SAT Command Center */}
+      <div className="welcome-banner-premium relative overflow-hidden rounded-3xl p-6 md:p-8 flex flex-col lg:flex-row justify-between items-center gap-8 shadow-premium border border-slate-800 bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white">
+        <div className="absolute top-0 right-0 h-48 w-48 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 h-36 w-36 rounded-full bg-cyan-500/10 blur-3xl pointer-events-none" />
         
         {/* Left Side: Avatar & Greetings */}
-        <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left z-10 w-full lg:max-w-2xl">
-          <div className="h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 text-white font-extrabold text-2xl md:text-3xl flex items-center justify-center shadow-lg shadow-indigo-600/20 shrink-0">
+        <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left z-10 w-full lg:max-w-3xl">
+          <div className="h-16 w-16 md:h-20 md:w-20 rounded-2xl bg-gradient-to-tr from-indigo-600 to-cyan-500 text-white font-extrabold text-2xl md:text-3xl flex items-center justify-center shadow-lg shadow-indigo-600/30 shrink-0">
             {user.name ? user.name.split(' ').map(n=>n[0]).join('').slice(0,2) : 'A'}
           </div>
-          <div className="space-y-2 flex-1">
-            <div className="inline-flex items-center gap-1 text-[10px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 px-2.5 py-1 rounded-full border border-indigo-100">
-              <Zap className="h-3 w-3 fill-indigo-550 shrink-0" /> Mission Control Active
+          <div className="space-y-3 flex-1">
+            <div className="inline-flex items-center gap-1.5 text-[10px] font-black text-cyan-400 uppercase tracking-widest bg-cyan-950/50 border border-cyan-900/40 px-3 py-1 rounded-full">
+              <Zap className="h-3 w-3 shrink-0 text-cyan-400" /> SAT COMMAND CENTER ACTIVE
             </div>
-            <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight leading-tight font-display">
+            <h1 className="text-2xl md:text-3xl font-black tracking-tight text-white font-display">
               Welcome back, {user.name}! 🎓
             </h1>
             
-            {/* Progression details */}
-            <div className="space-y-1.5 pt-1">
-              <div className="flex justify-between text-[10px] font-black text-slate-500 uppercase tracking-wide">
-                <span>Tier: {user.level} ({user.xp} XP)</span>
-                <span className="text-indigo-600">Next Target: {progress.label} ({progress.nextXp} XP)</span>
+            {/* Real-time stats grid in banner */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
+              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
+                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Global SAT Rank</span>
+                <span className="text-xs font-black text-white block mt-0.5">#1,425 <span className="text-[9px] text-emerald-400 font-extrabold">▲4</span></span>
               </div>
-              <div className="w-full h-2 bg-indigo-100/50 rounded-full overflow-hidden border border-indigo-200/20">
+              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
+                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Competitor Tier</span>
+                <span className="text-xs font-black text-cyan-400 block mt-0.5">{user.level}</span>
+              </div>
+              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
+                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Arena Accuracy</span>
+                <span className="text-xs font-black text-indigo-400 block mt-0.5">{averageAccuracy || '0'}%</span>
+              </div>
+              <div className="bg-slate-950/45 p-3 rounded-xl border border-slate-850">
+                <span className="text-[8px] font-black text-slate-400 block uppercase tracking-wider">Daily Streak</span>
+                <span className="text-xs font-black text-amber-500 block mt-0.5">🔥 {streakDays || '5'} Days</span>
+              </div>
+            </div>
+
+            {/* Progression details */}
+            <div className="space-y-1.5 pt-2">
+              <div className="flex justify-between text-[9px] font-black text-slate-300 uppercase tracking-wider">
+                <span>XP Level Progression: {user.xp} XP</span>
+                <span className="text-cyan-400">Next Target: {progress.label} ({progress.nextXp} XP)</span>
+              </div>
+              <div className="w-full h-2 bg-slate-950 rounded-full overflow-hidden border border-slate-850">
                 <div 
                   className="h-full glow-bar-fill rounded-full"
                   style={{ width: `${progress.percent}%` }}
@@ -251,9 +271,9 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
         <div className="flex items-center justify-center lg:justify-end z-10 shrink-0 w-full lg:w-auto">
           <button
             onClick={() => handleLevelClick(activeExamId, user.level === 'Beginner' ? 'Beginner' : user.level === 'Intermediate' ? 'Intermediate' : 'Advanced', activeSubject)}
-            className="px-6 py-4 rounded-2xl bg-slate-900 hover:bg-slate-850 text-white font-extrabold text-xs uppercase tracking-wider transition-all shadow-md flex items-center gap-1.5 hover:scale-[1.01] active:scale-[0.99] shrink-0"
+            className="px-8 py-4 rounded-2xl btn-premium-action text-white font-extrabold text-xs uppercase tracking-wider transition-all flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] shrink-0 font-sans"
           >
-            Resume Arena <ArrowRight className="h-4 w-4" />
+            START SAT CHALLENGE <ArrowRight className="h-4 w-4" />
           </button>
         </div>
       </div>
@@ -324,13 +344,13 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                   <div
                     key={sub}
                     onClick={() => handleSubjectChange(activeExam.id, sub)}
-                    className={`premium-card p-5 relative overflow-hidden text-left cursor-pointer flex flex-col justify-between min-h-[150px] select-none transition-all ${
+                    className={`glass-premium glass-premium-hover p-5 relative overflow-hidden text-left cursor-pointer flex flex-col justify-between min-h-[170px] select-none transition-all ${
                       isActive 
-                        ? 'ring-2 ring-indigo-500/85 border-indigo-200/50 bg-indigo-50/5' 
-                        : 'hover:scale-[1.01]'
+                        ? 'ring-2 ring-indigo-500/85 border-indigo-300 bg-white/70 shadow-lg' 
+                        : ''
                     }`}
                   >
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-550 opacity-80" />
+                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-indigo-550 via-purple-500 to-cyan-500 opacity-80" />
                     
                     <div className="flex justify-between items-start">
                       <div className="flex items-center gap-1.5">
@@ -338,8 +358,8 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                         <span className="text-xs font-black text-slate-700 tracking-tight">{sub}</span>
                       </div>
                       <span className={`px-2 py-0.5 rounded text-[8px] font-black uppercase ${
-                        mastery === 'Novice' ? 'bg-slate-100 text-slate-600' :
-                        mastery.startsWith('Bronze') || mastery === 'Apprentice' ? 'bg-amber-100/50 text-amber-700 border border-amber-100' :
+                        mastery === 'Novice' ? 'bg-slate-100 text-slate-650' :
+                        mastery === 'Apprentice' ? 'bg-amber-50 text-amber-700 border border-amber-100' :
                         mastery.startsWith('Specialist') ? 'bg-sky-50 text-sky-700 border border-sky-100' :
                         'bg-emerald-50 text-emerald-700 border border-emerald-100'
                       }`}>
@@ -347,14 +367,30 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                       </span>
                     </div>
 
-                    <div className="mt-5 space-y-2">
+                    {/* Mini statistics grid */}
+                    <div className="grid grid-cols-2 gap-2 my-2 text-[9px] font-bold text-slate-500">
+                      <div>
+                        <span className="text-slate-800 block text-xs font-black">
+                          {attempts.reduce((sum, r) => sum + r.correct_answers, 0)} Solved
+                        </span>
+                        Qs Solved
+                      </div>
+                      <div>
+                        <span className="text-slate-800 block text-xs font-black text-indigo-600">
+                          +{sub === 'SAT Math' ? '40' : '30'} XP
+                        </span>
+                        Reward Rate
+                      </div>
+                    </div>
+
+                    <div className="mt-2 space-y-2">
                       <div className="flex justify-between items-center text-[9px] text-slate-600 font-bold uppercase tracking-wider">
                         <span>Progress: {completionPercent}%</span>
                         {attempts.length > 0 && <span>Acc: {avgAcc}%</span>}
                       </div>
                       <div className="w-full h-1.5 bg-slate-100 rounded-full overflow-hidden border border-slate-200/30">
                         <div 
-                          className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"
+                          className="h-full bg-gradient-to-r from-indigo-500 to-cyan-400 rounded-full"
                           style={{ width: `${completionPercent}%` }}
                         />
                       </div>
@@ -371,25 +407,37 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
           <div className="space-y-4">
             <h2 className="text-xs font-black uppercase text-slate-550 tracking-wider">3. Journey Pathway & difficulty</h2>
             
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 relative">
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 relative">
               
-              {['Beginner', 'Intermediate', 'Advanced'].map((diff, index) => {
+              {['Beginner', 'Intermediate', 'Advanced', 'Elite', 'Challenger'].map((diff, index) => {
                 const nodeIndex = `0${index + 1}`
                 const userLevel = user.level || 'Beginner'
-                const isLocked = (diff === 'Intermediate' && userLevel === 'Beginner') ||
-                                 (diff === 'Advanced' && (userLevel === 'Beginner' || userLevel === 'Intermediate')) ||
-                                 (diff === 'Intermediate' && user.lock?.isLocked)
                 
-                const isCompleted = (diff === 'Beginner' && (userLevel === 'Intermediate' || userLevel === 'Advanced')) ||
-                                    (diff === 'Intermediate' && userLevel === 'Advanced')
+                const levelRank = {
+                  'Beginner': 1,
+                  'Intermediate': 2,
+                  'Advanced': 3,
+                  'Elite': 4,
+                  'Challenger': 5
+                }
                 
-                const dotColor = diff === 'Beginner' ? 'from-sky-400 to-indigo-500' : diff === 'Intermediate' ? 'from-amber-400 to-orange-500' : 'from-emerald-400 to-teal-500';
+                const currentRankVal = levelRank[userLevel] || 1
+                const targetRankVal = levelRank[diff] || 1
+                
+                const isLocked = targetRankVal > currentRankVal || (diff !== 'Beginner' && user.lock?.isLocked)
+                const isCompleted = currentRankVal > targetRankVal
+                
+                const dotColor = diff === 'Beginner' ? 'from-sky-400 to-indigo-500' : 
+                                 diff === 'Intermediate' ? 'from-amber-400 to-orange-500' : 
+                                 diff === 'Advanced' ? 'from-emerald-400 to-teal-500' :
+                                 diff === 'Elite' ? 'from-pink-500 to-purple-600' : 
+                                 'from-red-600 to-indigo-950';
 
                 return (
                   <div
                     key={diff}
-                    className={`premium-card p-6 relative overflow-hidden flex flex-col justify-between min-h-[180px] select-none text-left transition-all ${
-                      isLocked ? 'locked-row-premium' : ''
+                    className={`glass-premium p-5 relative overflow-hidden flex flex-col justify-between min-h-[190px] select-none text-left transition-all ${
+                      isLocked ? 'opacity-65 backdrop-blur-[1px]' : 'glass-premium-hover'
                     }`}
                   >
                     {/* Top Node Number index badge */}
@@ -399,39 +447,39 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
                       </div>
                       
                       {isLocked ? (
-                        <span className="flex items-center gap-1 text-[8px] font-black text-slate-455 uppercase tracking-widest">
-                          <Lock className="h-3 w-3" /> Locked
+                        <span className="flex items-center gap-1 text-[8px] font-black text-slate-400 uppercase tracking-widest">
+                          <Lock className="h-3 w-3 text-slate-400" /> Locked
                         </span>
                       ) : isCompleted ? (
                         <span className="flex items-center gap-1 text-[8px] font-black text-emerald-600 uppercase tracking-widest bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full">
-                          <CheckCircle2 className="h-3 w-3" /> Completed
+                          <CheckCircle2 className="h-3 w-3" /> Cleared
                         </span>
                       ) : (
                         <span className="flex items-center gap-1 text-[8px] font-black text-indigo-600 uppercase tracking-widest bg-indigo-50 border border-indigo-100 px-2 py-0.5 rounded-full">
-                          Active Arena
+                          Active
                         </span>
                       )}
                     </div>
 
-                    <div className="mt-4">
-                      <h3 className="text-sm font-black text-slate-800 uppercase tracking-wider">{diff} TIER</h3>
-                      <p className="text-[10px] text-slate-550 font-bold uppercase tracking-wide mt-1">Difficulty level pool</p>
+                    <div className="mt-3">
+                      <h3 className="text-xs font-black text-slate-800 uppercase tracking-wider">{diff} TIER</h3>
+                      <p className="text-[9px] text-slate-500 font-bold uppercase tracking-wide mt-0.5">Arena Track Pool</p>
                     </div>
 
-                    <div className="mt-6">
+                    <div className="mt-4">
                       {isLocked ? (
-                        <div className="text-[10px] text-slate-600 font-semibold leading-relaxed">
+                        <div className="text-[9px] text-slate-500 font-semibold leading-normal">
                           {diff === 'Intermediate' && user.lock?.isLocked 
                             ? `Verification lock active. Cooldown ends shortly.` 
-                            : `Complete previous stages to unlock access.`
+                            : `Complete ${['Beginner', 'Intermediate', 'Advanced', 'Elite'][index - 1]} stage to unlock.`
                           }
                         </div>
                       ) : (
                         <button
                           onClick={() => handleLevelClick(activeExam.id, diff, activeSubject)}
-                          className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-extrabold text-[10px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 border border-slate-850 shadow-xs"
+                          className="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-850 text-white font-extrabold text-[9px] uppercase tracking-wider transition-all flex items-center justify-center gap-1 border border-slate-850 shadow-xs"
                         >
-                          Launch CBT mock &rarr;
+                          Launch Arena &rarr;
                         </button>
                       )}
                     </div>

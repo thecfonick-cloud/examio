@@ -7,6 +7,8 @@ import {
 
 export default function LandingPage({ onShowAuth }) {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [feedIndex, setFeedIndex] = useState(0);
+  
   const slideAvatars = [
     {
       name: "Emily Smith",
@@ -34,11 +36,27 @@ export default function LandingPage({ onShowAuth }) {
     }
   ];
 
+  const globalEvents = [
+    { name: "Liam O.", country: "🇬🇧", action: "cleared Reading Intermediate", metric: "+40 XP" },
+    { name: "Sophia K.", country: "🇺🇸", action: "achieved 100% in Math Beginner", metric: "+50 XP" },
+    { name: "Mateo R.", country: "🇪🇸", action: "unlocked Elite Competitor Tier", metric: "Rank Up!" },
+    { name: "Yuki T.", country: "🇯🇵", action: "cleared Writing Advanced", metric: "+60 XP" },
+    { name: "Chloe M.", country: "🇨🇦", action: "maintained a 5-day streak", metric: "🔥 Multiplier" }
+  ];
+
   // Rotate testimonials automatically
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % slideAvatars.length);
     }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Rotate global feed events
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFeedIndex((prev) => (prev + 1) % globalEvents.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -163,13 +181,36 @@ export default function LandingPage({ onShowAuth }) {
 
               {/* Simulated Live Feed */}
               <div className="space-y-3">
-                <div className="flex items-center justify-between text-xs bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/50">
-                  <span className="flex items-center gap-2 text-indigo-400 font-extrabold">
+                <div className="flex items-center justify-between text-xs bg-slate-950/60 p-2.5 rounded-lg border border-slate-800/50 h-11 overflow-hidden relative">
+                  <span className="flex items-center gap-2 text-indigo-400 font-extrabold shrink-0">
                     <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                     LIVE
                   </span>
-                  <span className="text-slate-400 text-[10px]">SAT Section Challenge: Math</span>
-                  <span className="text-emerald-400 font-black">+180 XP</span>
+                  <div className="flex-1 flex justify-between items-center px-3 overflow-hidden">
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={feedIndex}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        className="text-slate-350 text-[10px] truncate"
+                      >
+                        {globalEvents[feedIndex].country} <strong>{globalEvents[feedIndex].name}</strong> {globalEvents[feedIndex].action}
+                      </motion.span>
+                    </AnimatePresence>
+                    <AnimatePresence mode="wait">
+                      <motion.span
+                        key={feedIndex}
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.9 }}
+                        className="text-emerald-400 font-black text-[10px] shrink-0"
+                      >
+                        {globalEvents[feedIndex].metric}
+                      </motion.span>
+                    </AnimatePresence>
+                  </div>
                 </div>
 
                 {/* Scoreboard Mockup inside HUD */}
@@ -228,13 +269,13 @@ export default function LandingPage({ onShowAuth }) {
       <section className="py-24 px-4 md:px-8 max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-3">
           <div className="inline-flex items-center gap-1.5 text-xs font-black text-cyan-400 uppercase tracking-widest bg-cyan-500/5 px-3 py-1 rounded-full border border-cyan-500/10">
-            <Flame className="h-3 w-3 animate-bounce" /> HIGH HEAT COMBAT TIERS
+            <Flame className="h-3 w-3 animate-bounce" /> HIGH HEAT ARENA TIERS
           </div>
           <h2 className="text-3xl md:text-4xl font-black font-display tracking-tight">
-            Select Your Target Battle Track
+            Select Your Target Arena Section
           </h2>
           <p className="text-slate-400 text-sm max-w-lg mx-auto font-medium">
-            Deploy inside competitive modules configured to replicate real-time examination difficulty benchmarks.
+            Deploy inside competitive arenas configured to replicate real-time examination difficulty benchmarks.
           </p>
         </div>
 
@@ -292,7 +333,7 @@ export default function LandingPage({ onShowAuth }) {
                   onClick={() => onShowAuth(true)}
                   className="w-full py-2 rounded-lg bg-slate-950 group-hover:bg-indigo-600/90 border border-slate-800 group-hover:border-indigo-500 text-slate-400 group-hover:text-white text-[10px] font-black uppercase tracking-wider transition-all duration-300"
                 >
-                  ENTER BATTLE
+                  START SECTION
                 </button>
               </div>
             </motion.div>

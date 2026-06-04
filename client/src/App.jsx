@@ -143,36 +143,50 @@ export default function App() {
   // Render Landing Page for Logged-Out Users
   const renderLandingPage = () => {
     return (
-      <div style={{ marginTop: '64px' }}>
+      <div style={{ marginTop: '64px' }} className="premium-bg-mesh">
         {/* Landing Hero */}
         <section className="landing-hero">
-          <div className="hero-slideshow">
-            {slidesImages.map((imgSrc, idx) => (
-              <div
-                key={imgSrc}
-                className={`hero-slide ${idx === currentSlide ? 'active-slide' : ''}`}
-                style={{ backgroundImage: `url('${imgSrc}')` }}
-              />
-            ))}
-            <div className="hero-overlay" />
-          </div>
-          <div className="max-w-container-max-width mx-auto text-center z-10 hero-content reveal active">
-            <h1 className="hero-title">Examio - Competitive SAT Ranking Platform</h1>
-            <p className="hero-subtitle">
-              Compete. Rank. Conquer the SAT. Challenge yourself, gain ranks, and track your levels in SAT Math, SAT Reading, and SAT Writing & Language.
+          <div className="radial-orb radial-orb-cyan -top-20 -left-20 w-[450px] h-[450px]" />
+          <div className="radial-orb radial-orb-indigo -bottom-20 -right-20 w-[550px] h-[550px]" />
+          
+          <div className="max-w-container-max-width mx-auto text-center z-10 hero-content reveal active px-4">
+            <h1 className="hero-title heading-heavy tracking-tighter text-white">The Global SAT Competition Arena</h1>
+            <p className="hero-subtitle text-slate-100 max-w-2xl mx-auto my-6 text-sm md:text-base leading-relaxed">
+              Compete against SAT aspirants worldwide, climb live rankings, master every section, and rise through elite challenge tiers.
             </p>
-            <div className="hero-buttons">
+            
+            {/* Live Global Social Proof Metrics Row */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto my-8 px-2">
+              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
+                <div className="text-xl md:text-2xl font-black text-white font-display">124,000+</div>
+                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Challenges Completed</div>
+              </div>
+              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
+                <div className="text-xl md:text-2xl font-black text-cyan-400 font-display">42</div>
+                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Countries Active</div>
+              </div>
+              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
+                <div className="text-xl md:text-2xl font-black text-indigo-400 font-display">12,842</div>
+                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Competitors Online</div>
+              </div>
+              <div className="glass-premium p-4 rounded-2xl text-center backdrop-blur-md border border-white/5 shadow-md">
+                <div className="text-xl md:text-2xl font-black text-emerald-400 font-display">1.2M+</div>
+                <div className="text-slate-400 text-[9px] font-black uppercase tracking-wider mt-1">Questions Solved</div>
+              </div>
+            </div>
+
+            <div className="hero-buttons flex flex-wrap justify-center gap-4 mt-6">
               <button
-                className="btn-hero-primary"
+                className="btn-hero-primary btn-premium-action"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
               >
-                Sign In to Portal
+                Enter Command Center
               </button>
               <button
                 className="btn-hero-secondary"
                 onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
               >
-                Register Now
+                Start Competing
               </button>
             </div>
           </div>
@@ -405,35 +419,42 @@ export default function App() {
           {!user ? (
             // Logged Out Header links
             <>
-              <nav className="nav-links">
-                <a href="#features" className="nav-item">Features</a>
-                <a href="#features" className="nav-item">Exams</a>
-                <button 
-                  onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }} 
-                  className="nav-item"
-                >
-                  Login
-                </button>
-              </nav>
+              {/* Glass Topbar Ticker */}
+              <div className="hidden lg:flex items-center gap-4 text-[10px] font-black uppercase tracking-widest text-slate-500 bg-slate-100/90 px-4 py-2 rounded-full border border-slate-200/50">
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <strong className="text-slate-800">12,842</strong> competitors online
+                </span>
+                <span className="text-slate-350">|</span>
+                <span className="flex items-center gap-1.5">
+                  <strong className="text-slate-800">124,000</strong> SAT challenges completed
+                </span>
+              </div>
 
               <div className="header-actions">
                 <button
                   className="btn-header-login"
                   onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(false); }}
                 >
-                  Sign In
+                  Enter Command Center
                 </button>
                 <button
-                  className="btn-header-register"
+                  className="btn-header-register btn-premium-action"
                   onClick={() => { setShowAuthModal(true); setIsRegisteringFromLanding(true); }}
                 >
-                  Register
+                  Start Competing
                 </button>
               </div>
             </>
           ) : (
             // Logged In Header controls
             <>
+              <div className="flex items-center">
+                {/* Active Daily Streak indicator */}
+                <div className="hidden md:flex items-center gap-1 text-xs font-black uppercase tracking-wider text-amber-600 bg-amber-50 border border-amber-200/60 px-3.5 py-1.5 rounded-full mr-4 select-none">
+                  🔥 {user.xp > 0 ? '5 Day Streak' : '1 Day Streak'}
+                </div>
+              </div>
               <div className="header-actions">
                 {/* User Widget */}
                 <div 

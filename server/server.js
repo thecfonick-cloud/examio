@@ -148,7 +148,7 @@ app.get('/api/exams/:examId/questions', async (req, res) => {
     }
 
     // Check progression locks
-    const userLevel = user.level // 'Beginner', 'Intermediate', 'Advanced'
+    const userLevel = user.level // 'Beginner', 'Intermediate', 'Advanced', 'Elite', 'Challenger'
 
     if (difficulty === 'Intermediate') {
       if (userLevel === 'Beginner') {
@@ -166,8 +166,24 @@ app.get('/api/exams/:examId/questions', async (req, res) => {
       }
     }
 
-    // Fetch questions from DB (handling both Advanced and Expert naming)
-    const targetDiff = difficulty === 'Expert' ? 'Advanced' : difficulty
+    if (difficulty === 'Elite') {
+      if (userLevel === 'Beginner' || userLevel === 'Intermediate' || userLevel === 'Advanced') {
+        return res.status(403).json({
+          error: 'Progression Lock: You must pass an Advanced exam to unlock Elite levels.'
+        })
+      }
+    }
+
+    if (difficulty === 'Challenger') {
+      if (userLevel !== 'Elite' && userLevel !== 'Challenger') {
+        return res.status(403).json({
+          error: 'Progression Lock: You must pass an Elite exam to unlock Challenger levels.'
+        })
+      }
+    }
+
+    // Fetch questions from DB (handling Advanced/Elite/Challenger mapping)
+    const targetDiff = (difficulty === 'Expert' || difficulty === 'Elite' || difficulty === 'Challenger') ? 'Advanced' : difficulty
     const questions = await db.all(
       'SELECT id, exam_id, subject, difficulty, question_text, options FROM questions WHERE exam_id = ? AND subject = ? AND (difficulty = ? OR difficulty = ?)',
       [examId, subject, targetDiff, targetDiff === 'Advanced' ? 'Expert' : 'Advanced']
@@ -205,10 +221,11 @@ app.post('/api/exams/submit', async (req, res) => {
       return res.status(404).json({ error: 'User not found' })
     }
 
+    const targetDiff = (difficulty === 'Expert' || difficulty === 'Elite' || difficulty === 'Challenger') ? 'Advanced' : difficulty
     // Fetch full questions to score
     const questions = await db.all(
       'SELECT * FROM questions WHERE exam_id = ? AND subject = ? AND difficulty = ?',
-      [examId, subject, difficulty]
+      [examId, subject, targetDiff]
     )
 
     if (questions.length === 0) {
@@ -269,6 +286,22 @@ app.post('/api/exams/submit', async (req, res) => {
     } else if (difficulty === 'Intermediate') {
       if (passed && user.level === 'Intermediate') {
         newLevel = 'Advanced'
+      }
+      await db.run(
+        'UPDATE users SET xp = xp + ?, level = ? WHERE id = ?',
+        [xpEarned, newLevel, userId]
+      )
+    } else if (difficulty === 'Advanced') {
+      if (passed && user.level === 'Advanced') {
+        newLevel = 'Elite'
+      }
+      await db.run(
+        'UPDATE users SET xp = xp + ?, level = ? WHERE id = ?',
+        [xpEarned, newLevel, userId]
+      )
+    } else if (difficulty === 'Elite') {
+      if (passed && user.level === 'Elite') {
+        newLevel = 'Challenger'
       }
       await db.run(
         'UPDATE users SET xp = xp + ?, level = ? WHERE id = ?',
