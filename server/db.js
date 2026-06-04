@@ -106,16 +106,15 @@ export async function initDb() {
     );
   `)
 
-  // Insert default exams if not present
-  const examCount = await database.get('SELECT COUNT(*) as count FROM exams')
-  if (examCount.count === 0) {
-    const stmt = await database.prepare('INSERT INTO exams (id, name, description) VALUES (?, ?, ?)')
-    await stmt.run('JEE', 'JEE', 'Joint Entrance Examination for engineering aspirants')
-    await stmt.run('NEET', 'NEET', 'National Eligibility cum Entrance Test for medical aspirants')
-    await stmt.run('UPSC', 'UPSC', 'Union Public Service Commission civil services examination')
-    await stmt.run('SSC', 'SSC', 'Staff Selection Commission for government posts')
-    await stmt.run('WBJEE', 'WBJEE', 'West Bengal Joint Entrance Examination')
-    await stmt.finalize()
-    console.log('Seeded default exams.')
+  // Insert default exams (SAT only) safely
+  await database.exec(`
+    INSERT OR IGNORE INTO exams (id, name, description)
+    VALUES ('SAT', 'SAT', 'Scholastic Aptitude Test for competitive college admissions')
+  `)
+  try {
+    await database.exec("DELETE FROM exams WHERE id != 'SAT'")
+  } catch (err) {
+    console.warn('Failed to delete legacy exams:', err.message)
   }
+  console.log('Seeded default exams (SAT only).')
 }

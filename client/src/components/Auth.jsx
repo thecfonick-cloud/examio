@@ -27,7 +27,7 @@ export default function Auth({ onLogin, onClose, initialRegisterState = false })
   const [isRegistering, setIsRegistering] = useState(initialRegisterState)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [targetExam, setTargetExam] = useState('JEE')
+  const [targetExam, setTargetExam] = useState('SAT')
 
   // Load Real Google Identity Services SDK
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function Auth({ onLogin, onClose, initialRegisterState = false })
                 body: JSON.stringify({
                   email: decoded.email,
                   name: decoded.name,
-                  targetExam: targetExam || 'JEE'
+                  targetExam: targetExam || 'SAT'
                 })
               })
               const data = await apiResponse.json()
@@ -173,17 +173,17 @@ export default function Auth({ onLogin, onClose, initialRegisterState = false })
               Empowering Competitive Academic Excellence.
             </h1>
             <p className="text-xs font-semibold leading-relaxed text-slate-200" style={{ color: 'rgba(255, 255, 255, 0.85)' }}>
-              Access structured study resources, simulate real-time computer-based tests, and benchmark your rank nationally. Engineered for competitive entrance exam candidates.
+              Access structured study resources, simulate real-time computer-based tests, and benchmark your rank globally. Engineered for SAT competitive platform candidates.
             </p>
           </div>
 
           {/* Testimonial Capsule */}
           <div className="relative z-10 bg-white/10 backdrop-blur-md border border-white/10 p-4 rounded-2xl">
             <p className="text-xs italic font-semibold leading-relaxed text-white" style={{ color: '#ffffff' }}>
-              "The realistic CBT simulation and detailed analytics on Examio were essential in optimizing my performance for the JEE entrance."
+              "The realistic CBT simulation and detailed analytics on Examio were essential in optimizing my performance for the SAT."
             </p>
             <div className="text-[10px] font-black uppercase tracking-wider text-cyan-200 mt-2" style={{ color: '#a5f3fc' }}>
-              — Aarav Mehta, JEE Candidate
+              — Emily Smith, SAT Candidate
             </div>
           </div>
         </div>
@@ -247,11 +247,7 @@ export default function Auth({ onLogin, onClose, initialRegisterState = false })
                     onChange={(e) => setTargetExam(e.target.value)}
                     disabled={loading}
                   >
-                    <option value="JEE">JEE (Engineering Entrance)</option>
-                    <option value="NEET">NEET (Medical Entrance)</option>
-                    <option value="UPSC">UPSC (Civil Services)</option>
-                    <option value="SSC">SSC (Government Placement)</option>
-                    <option value="WBJEE">WBJEE (State Engineering)</option>
+                    <option value="SAT">SAT (Scholastic Aptitude Test)</option>
                   </select>
                 </div>
               </>

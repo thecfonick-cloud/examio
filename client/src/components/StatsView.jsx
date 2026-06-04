@@ -123,7 +123,7 @@ export default function StatsView({ user }) {
     { id: 'acc_master', title: 'Speed Scholar', desc: '90%+ accuracy on any mock test', icon: '🎯', unlocked: resultsHistory.some(r => r.accuracy >= 90) },
     { id: 'streak_pioneer', title: 'Consistency King', desc: 'Maintain a 3-day active streak', icon: '🔥', unlocked: streakDays >= 3 },
     { id: 'xp_champion', title: 'XP Elite', desc: 'Accumulate 500+ XP points', icon: '⚡', unlocked: user.xp >= 500 },
-    { id: 'multi_exam', title: 'Polymath', desc: 'Practice in 2+ exam tracks', icon: '🧠', unlocked: new Set(resultsHistory.map(r => r.exam_id)).size >= 2 }
+    { id: 'multi_exam', title: 'Polymath', desc: 'Practice in 2+ SAT sections', icon: '🧠', unlocked: new Set(resultsHistory.map(r => r.subject)).size >= 2 }
   ]
 
   if (loading) {

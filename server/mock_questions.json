@@ -1,107 +1,135 @@
 [
   {
-    "exam": "JEE",
-    "subject": "Physics",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Beginner",
-    "question": "If displacement of a particle is zero, the distance covered:",
+    "question": "If 2x + 7 = 15, what is the value of x?",
     "options": {
-      "A": "Must be zero",
-      "B": "May or may not be zero",
-      "C": "Cannot be zero",
-      "D": "Depends on the mass"
+      "A": "3",
+      "B": "4",
+      "C": "5",
+      "D": "6"
     },
     "correctAnswer": "B",
-    "explanation": "If a particle moves from point A and returns to A, its displacement is zero but the distance covered is the perimeter/path length, which is non-zero. If it remains at rest, both are zero."
+    "explanation": "Subtract 7 from both sides: 2x = 8. Divide by 2: x = 4."
   },
   {
-    "exam": "JEE",
-    "subject": "Physics",
-    "difficulty": "Intermediate",
-    "question": "A particle of mass m is moving in a circular path of constant radius r such that its centripetal acceleration ac is varying with time t as ac = k^2 r t^2. The power delivered to the particle by the forces acting on it is:",
-    "options": {
-      "A": "2pi m k^2 r^2 t",
-      "B": "m k^2 r^2 t",
-      "C": "1/2 m k^2 r^2 t",
-      "D": "Zero"
-    },
-    "correctAnswer": "B",
-    "explanation": "Centripetal acceleration ac = v^2 / r = k^2 r t^2 => v = k r t. Tangential acceleration at = dv/dt = k r. Power P = F_tangential * v = m * at * v = m * (k r) * (k r t) = m k^2 r^2 t."
-  },
-  {
-    "exam": "JEE",
-    "subject": "Physics",
-    "difficulty": "Advanced",
-    "question": "A solid sphere of mass M and radius R is spinning with angular velocity w0 about a light axis. It is placed gently on a rough horizontal surface. The coefficient of friction is u. The time after which pure rolling starts is:",
-    "options": {
-      "A": "(w0 * R) / (7 * u * g)",
-      "B": "(2 * w0 * R) / (7 * u * g)",
-      "C": "(5 * w0 * R) / (7 * u * g)",
-      "D": "(2 * w0 * R) / (5 * u * g)"
-    },
-    "correctAnswer": "B",
-    "explanation": "For a solid sphere, rolling starts when v = w * R. Linear velocity v = u*g*t. Angular velocity w = w0 - (friction * R / I)*t = w0 - (u*M*g * R / (2/5 * M * R^2))*t = w0 - (5*u*g)/(2*R)*t. Substituting v/R = w yields t = (2 * w0 * R) / (7 * u * g)."
-  },
-  {
-    "exam": "JEE",
-    "subject": "Chemistry",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Beginner",
-    "question": "Which of the following orbitals has a spherical shape?",
+    "question": "Which of the following is equivalent to the expression 3(x + 4) - 2x?",
     "options": {
-      "A": "s-orbital",
-      "B": "p-orbital",
-      "C": "d-orbital",
-      "D": "f-orbital"
+      "A": "x + 12",
+      "B": "x + 4",
+      "C": "5x + 12",
+      "D": "5x + 4"
     },
     "correctAnswer": "A",
-    "explanation": "The s-orbital is spherically symmetrical about the nucleus, while p-orbitals are dumbbell-shaped."
+    "explanation": "Distribute the 3: 3x + 12 - 2x = x + 12."
   },
   {
-    "exam": "JEE",
-    "subject": "Chemistry",
-    "difficulty": "Intermediate",
-    "question": "The correct order of increasing acidic strength of methyl-substituted benzoic acids is:",
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "A line in the xy-plane passes through the origin and has a slope of 2/3. Which of the following points lies on the line?",
     "options": {
-      "A": "p-methylbenzoic acid < benzoic acid < o-methylbenzoic acid",
-      "B": "benzoic acid < p-methylbenzoic acid < o-methylbenzoic acid",
-      "C": "o-methylbenzoic acid < p-methylbenzoic acid < benzoic acid",
-      "D": "benzoic acid < o-methylbenzoic acid < p-methylbenzoic acid"
-    },
-    "correctAnswer": "A",
-    "explanation": "Due to the ortho-effect, o-methylbenzoic acid is the strongest acid. p-Methyl group decreases acidity due to +I and hyperconjugation effects, making it weaker than benzoic acid."
-  },
-  {
-    "exam": "JEE",
-    "subject": "Chemistry",
-    "difficulty": "Advanced",
-    "question": "In a hexagonal close-packed (hcp) structure of spheres, the fraction of the total volume occupied by the spheres is:",
-    "options": {
-      "A": "0.68",
-      "B": "0.74",
-      "C": "0.52",
-      "D": "0.78"
+      "A": "(2, 3)",
+      "B": "(3, 2)",
+      "C": "(4, 6)",
+      "D": "(6, 9)"
     },
     "correctAnswer": "B",
-    "explanation": "The packing efficiency of both ccp and hcp lattices is 74%, which is the maximum packing fraction possible for spheres of equal size."
+    "explanation": "The equation of the line is y = (2/3)x. If x = 3, then y = (2/3)(3) = 2, which matches the point (3, 2)."
   },
   {
-    "exam": "JEE",
-    "subject": "Mathematics",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Beginner",
-    "question": "The value of log base 2 of 64 is:",
+    "question": "If f(x) = 3x^2 - 5, what is the value of f(2)?",
     "options": {
-      "A": "4",
-      "B": "5",
-      "C": "6",
-      "D": "8"
+      "A": "7",
+      "B": "12",
+      "C": "17",
+      "D": "22"
+    },
+    "correctAnswer": "A",
+    "explanation": "Substitute x = 2: f(2) = 3(2^2) - 5 = 3(4) - 5 = 12 - 5 = 7."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Beginner",
+    "question": "In a class of 30 students, the ratio of boys to girls is 2:3. How many girls are in the class?",
+    "options": {
+      "A": "12",
+      "B": "15",
+      "C": "18",
+      "D": "20"
     },
     "correctAnswer": "C",
-    "explanation": "Since 2^6 = 64, log_2(64) = 6."
+    "explanation": "The ratio parts sum to 2 + 3 = 5. The fraction of girls is 3/5. Therefore, the number of girls is 30 * (3/5) = 18."
   },
   {
-    "exam": "JEE",
-    "subject": "Mathematics",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Intermediate",
-    "question": "If the roots of the equation x^2 - bx + c = 0 are two consecutive integers, then b^2 - 4c equals:",
+    "question": "If x + y = 10 and x - y = 4, what is the value of xy?",
+    "options": {
+      "A": "14",
+      "B": "21",
+      "C": "24",
+      "D": "28"
+    },
+    "correctAnswer": "B",
+    "explanation": "Add the equations: 2x = 14 => x = 7. Substitute x = 7 into the first equation: 7 + y = 10 => y = 3. Therefore, xy = 7 * 3 = 21."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Intermediate",
+    "question": "The radius of a circle is 6. What is the area of a sector of this circle with a central angle of 60 degrees?",
+    "options": {
+      "A": "3pi",
+      "B": "6pi",
+      "C": "12pi",
+      "D": "36pi"
+    },
+    "correctAnswer": "B",
+    "explanation": "Total area of the circle is pi * r^2 = 36pi. The sector area is (60/360) * 36pi = (1/6) * 36pi = 6pi."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Intermediate",
+    "question": "If a^2 + b^2 = 50 and ab = 7, what is the value of (a + b)^2?",
+    "options": {
+      "A": "57",
+      "B": "64",
+      "C": "71",
+      "D": "99"
+    },
+    "correctAnswer": "B",
+    "explanation": "Expand (a + b)^2 = a^2 + b^2 + 2ab. Substituting the values gives 50 + 2(7) = 50 + 14 = 64."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Intermediate",
+    "question": "In right triangle ABC, the length of hypotenuse AC is 10 and the length of side AB is 6. What is the value of sin C?",
+    "options": {
+      "A": "3/5",
+      "B": "4/5",
+      "C": "3/4",
+      "D": "4/3"
+    },
+    "correctAnswer": "A",
+    "explanation": "Sine of angle C is the opposite side divided by the hypotenuse: sin C = AB / AC = 6 / 10 = 3/5."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Intermediate",
+    "question": "If 3^x = 9^(y+1) and x = y + 3, what is the value of y?",
     "options": {
       "A": "1",
       "B": "2",
@@ -109,734 +137,496 @@
       "D": "4"
     },
     "correctAnswer": "A",
-    "explanation": "Let the roots be n and n+1. The difference of roots is 1. (alpha - beta)^2 = (alpha + beta)^2 - 4*alpha*beta = b^2 - 4c. Since the difference is 1, b^2 - 4c = 1."
+    "explanation": "Express both sides with base 3: 3^x = (3^2)^(y+1) = 3^(2y+2) => x = 2y + 2. Substituting x = y + 3 gives y + 3 = 2y + 2 => y = 1."
   },
   {
-    "exam": "JEE",
-    "subject": "Mathematics",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Advanced",
-    "question": "The value of the integral from 0 to pi/2 of [sin^3(x) / (sin^3(x) + cos^3(x))] dx is:",
+    "question": "If x^2 - 6x - 16 = 0 and x > 0, what is the value of x?",
     "options": {
-      "A": "pi/2",
-      "B": "pi/4",
-      "C": "pi/6",
-      "D": "pi/8"
-    },
-    "correctAnswer": "B",
-    "explanation": "Using the property integral_0_a f(x) dx = integral_0_a f(a-x) dx, let the integral be I. Replacing x by pi/2 - x gives I = integral [cos^3(x) / (cos^3(x) + sin^3(x))] dx. Adding both equations gives 2I = integral_0_{pi/2} 1 dx = pi/2, so I = pi/4."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Physics",
-    "difficulty": "Beginner",
-    "question": "The dimensional formula for gravitational constant G is:",
-    "options": {
-      "A": "[M^-1 L^3 T^-2]",
-      "B": "[M^1 L^3 T^-2]",
-      "C": "[M^-1 L^2 T^-3]",
-      "D": "[M^1 L^2 T^-2]"
-    },
-    "correctAnswer": "A",
-    "explanation": "F = G * m1 * m2 / r^2 => G = F * r^2 / (m1 * m2) = [MLT^-2] * [L^2] / [M^2] = [M^-1 L^3 T^-2]."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Physics",
-    "difficulty": "Intermediate",
-    "question": "A body of mass 2 kg is thrown vertically upwards with kinetic energy of 490 J. The height at which the kinetic energy of the body becomes half of its original value is: (Take g = 9.8 m/s^2)",
-    "options": {
-      "A": "12.5 m",
-      "B": "25 m",
-      "C": "10 m",
-      "D": "50 m"
-    },
-    "correctAnswer": "A",
-    "explanation": "Initial KE = 490 J. Half of KE = 245 J. By conservation of energy, loss in KE = gain in PE. So, 245 J = m*g*h = 2 * 9.8 * h => h = 245 / 19.6 = 12.5 m."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Physics",
-    "difficulty": "Advanced",
-    "question": "A radioactive nucleus undergoes a series of decays: A -> A1 (alpha) -> A2 (beta-) -> A3 (alpha). If mass number of A is 180 and atomic number is 72, the mass number and atomic number of A3 are:",
-    "options": {
-      "A": "172, 69",
-      "B": "172, 70",
-      "C": "176, 69",
-      "D": "176, 71"
-    },
-    "correctAnswer": "A",
-    "explanation": "Alpha decay reduces mass number by 4 and atomic number by 2. Beta- decay increases atomic number by 1, leaving mass number constant. 1st alpha: A(180,72) -> A1(176,70). Beta-: A1(176,70) -> A2(176,71). 2nd alpha: A2(176,71) -> A3(172,69)."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Chemistry",
-    "difficulty": "Beginner",
-    "question": "The pH of a neutral solution at 25 degrees Celsius is:",
-    "options": {
-      "A": "0",
-      "B": "7",
-      "C": "14",
-      "D": "1"
-    },
-    "correctAnswer": "B",
-    "explanation": "At 25°C, a neutral solution has an equal concentration of H+ and OH- ions, resulting in a pH of 7."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Chemistry",
-    "difficulty": "Intermediate",
-    "question": "Which of the following coordinates with hemoglobin to form a highly toxic carboxyhemoglobin complex?",
-    "options": {
-      "A": "CO2",
-      "B": "CO",
-      "C": "O2",
-      "D": "NO2"
-    },
-    "correctAnswer": "B",
-    "explanation": "Carbon Monoxide (CO) has about 200 times higher affinity for hemoglobin than oxygen, forming a stable carboxyhemoglobin complex that prevents oxygen transport."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Chemistry",
-    "difficulty": "Advanced",
-    "question": "The number of structural isomers possible for the molecular formula C6H14 (hexane) is:",
-    "options": {
-      "A": "4",
-      "B": "5",
-      "C": "6",
-      "D": "7"
-    },
-    "correctAnswer": "B",
-    "explanation": "The five isomers are: n-hexane, 2-methylpentane, 3-methylpentane, 2,2-dimethylbutane, and 2,3-dimethylbutane."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "Which cell organelle is commonly known as the powerhouse of the cell?",
-    "options": {
-      "A": "Nucleus",
-      "B": "Mitochondria",
-      "C": "Ribosome",
-      "D": "Golgi Apparatus"
-    },
-    "correctAnswer": "B",
-    "explanation": "Mitochondria are responsible for cellular respiration and generating ATP, which is why they are called powerhouses of the cell."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Intermediate",
-    "question": "During muscle contraction, the cross-bridge is formed between:",
-    "options": {
-      "A": "Actin and Troponin",
-      "B": "Actin and Myosin head",
-      "C": "Myosin and Tropomyosin",
-      "D": "Tropomyosin and Troponin"
-    },
-    "correctAnswer": "B",
-    "explanation": "Calcium binds to troponin, exposing active sites on actin. The myosin head binds to these active sites to form cross-bridges."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Advanced",
-    "question": "In a linear double-stranded DNA molecule, if the percentage of cytosine is 30%, what is the percentage of adenine?",
-    "options": {
-      "A": "20%",
-      "B": "30%",
-      "C": "40%",
-      "D": "70%"
-    },
-    "correctAnswer": "A",
-    "explanation": "According to Chargaff's rule, G = C and A = T. If C = 30%, then G = 30%. Thus, G + C = 60%. The remaining 40% represents A + T. Since A = T, Adenine percentage = 40% / 2 = 20%."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "History",
-    "difficulty": "Beginner",
-    "question": "Who was the founder of the Maurya Empire in ancient India?",
-    "options": {
-      "A": "Ashoka",
-      "B": "Chandragupta Maurya",
-      "C": "Samudragupta",
-      "D": "Harsha"
-    },
-    "correctAnswer": "B",
-    "explanation": "Chandragupta Maurya founded the Maurya Empire around 322 BCE with the help of his advisor Chanakya (Kautilya)."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "History",
-    "difficulty": "Intermediate",
-    "question": "Which of the following leaders was NOT associated with the Moderates phase of the Indian National Congress?",
-    "options": {
-      "A": "Dadabhai Naoroji",
-      "B": "Womesh Chandra Bonnerjee",
-      "C": "Bal Gangadhar Tilak",
-      "D": "Gopal Krishna Gokhale"
+      "A": "2",
+      "B": "4",
+      "C": "8",
+      "D": "16"
     },
     "correctAnswer": "C",
-    "explanation": "Bal Gangadhar Tilak was a prominent leader of the Extremist (Lal-Bal-Pal) faction of the Congress, advocating self-rule (Swaraj) aggressively."
+    "explanation": "Factor the quadratic: (x - 8)(x + 2) = 0. The solutions are x = 8 and x = -2. Since x > 0, the value is 8."
   },
   {
-    "exam": "UPSC",
-    "subject": "History",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Advanced",
-    "question": "Consider the following statements regarding the Subsidiary Alliance System introduced by Lord Wellesley: (1) The ruler had to maintain British troops, (2) The ruler could declare war with permission from others, (3) A British resident was posted at the court. Which are correct?",
+    "question": "A bag contains 4 red marbles and n green marbles. If a marble is selected at random, the probability of selecting a red marble is 1/3. What is the value of n?",
     "options": {
-      "A": "1 and 2 only",
-      "B": "1 and 3 only",
-      "C": "2 and 3 only",
-      "D": "1, 2 and 3"
+      "A": "6",
+      "B": "8",
+      "C": "12",
+      "D": "16"
     },
     "correctAnswer": "B",
-    "explanation": "Under the Subsidiary Alliance, the ruler could not declare war or enter negotiations with any other power without the consent of the Governor-General. Thus, statement 2 is incorrect. Statements 1 and 3 are correct core terms."
+    "explanation": "Probability P(Red) = 4 / (4 + n) = 1/3. Cross-multiplying gives 12 = 4 + n => n = 8."
   },
   {
-    "exam": "UPSC",
-    "subject": "Polity",
-    "difficulty": "Beginner",
-    "question": "Who is the custodian of the Constitution of India?",
-    "options": {
-      "A": "The President of India",
-      "B": "The Prime Minister of India",
-      "C": "The Supreme Court of India",
-      "D": "The Parliament of India"
-    },
-    "correctAnswer": "C",
-    "explanation": "The Supreme Court is the ultimate interpreter and custodian of the Indian Constitution, possessing judicial review powers."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Polity",
-    "difficulty": "Intermediate",
-    "question": "Which Article of the Constitution of India lists the Fundamental Duties of Indian citizens?",
-    "options": {
-      "A": "Article 51A",
-      "B": "Article 32",
-      "C": "Article 19",
-      "D": "Article 21A"
-    },
-    "correctAnswer": "A",
-    "explanation": "Fundamental Duties were added by the 42nd Amendment Act in 1976 under Article 51A of Part IVA, upon recommendation of the Swaran Singh Committee."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Polity",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Advanced",
-    "question": "The power of the Parliament to amend the Constitution of India, including Fundamental Rights, was upheld by the Supreme Court in Kesavananda Bharati case (1973), subject to which of the following limitations?",
-    "options": {
-      "A": "Prior approval of the President",
-      "B": "Ratification by all State Legislatures",
-      "C": "Basic Structure doctrine",
-      "D": "Super-majority in Lok Sabha"
-    },
-    "correctAnswer": "C",
-    "explanation": "In the Kesavananda Bharati v. State of Kerala case, the Supreme Court ruled that Article 368 does not enable Parliament to alter the 'Basic Structure' or essential framework of the Constitution."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Geography",
-    "difficulty": "Beginner",
-    "question": "Which of the following lines passes approximately through the middle of India?",
-    "options": {
-      "A": "Equator",
-      "B": "Tropic of Capricorn",
-      "C": "Tropic of Cancer",
-      "D": "Prime Meridian"
-    },
-    "correctAnswer": "C",
-    "explanation": "The Tropic of Cancer (23.5° N latitude) passes through 8 states in India, dividing the country into almost equal northern and southern halves."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Geography",
-    "difficulty": "Intermediate",
-    "question": "The standard meridian of India (82 degrees 30 minutes E) passes through which of the following cities?",
-    "options": {
-      "A": "Mirzapur",
-      "B": "Patna",
-      "C": "New Delhi",
-      "D": "Kolkata"
-    },
-    "correctAnswer": "A",
-    "explanation": "The Indian Standard Time (IST) is calculated on the basis of 82.5° E longitude, which passes through Mirzapur near Allahabad in Uttar Pradesh."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Geography",
-    "difficulty": "Advanced",
-    "question": "Which of the following factors causes the shifting of the Inter-Tropical Convergence Zone (ITCZ) northward in summers?",
-    "options": {
-      "A": "Shifting of the sun's apparent path northward",
-      "B": "Coriolis force amplification",
-      "C": "Jet stream displacement",
-      "D": "Oceanic temperature inversion"
-    },
-    "correctAnswer": "A",
-    "explanation": "During the summer solstice in the northern hemisphere, the sun's apparent position shifts north towards the Tropic of Cancer, pulling the low-pressure ITCZ zone northward over the Indian subcontinent."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Quantitative Aptitude",
-    "difficulty": "Beginner",
-    "question": "A sum of money doubles itself in 5 years at simple interest. The rate of interest per annum is:",
-    "options": {
-      "A": "10%",
-      "B": "20%",
-      "C": "25%",
-      "D": "15%"
-    },
-    "correctAnswer": "B",
-    "explanation": "Let Principal = P. Simple Interest = P. Time = 5 years. SI = (P * R * T) / 100 => P = (P * R * 5) / 100 => R = 20%."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Quantitative Aptitude",
-    "difficulty": "Intermediate",
-    "question": "A and B can complete a piece of work in 12 days and 18 days respectively. If they work at it on alternate days, starting with A, in how many days will the work be finished?",
-    "options": {
-      "A": "14 days",
-      "B": "14.33 days",
-      "C": "15 days",
-      "D": "15.5 days"
-    },
-    "correctAnswer": "B",
-    "explanation": "Total work = LCM(12, 18) = 36 units. Efficiency of A = 3, B = 2. In 2 days, they complete 5 units. In 14 days (7 cycles), they complete 35 units. Remaining 1 unit is done by A on 15th day in 1/3 day. Total = 14 + 1/3 = 14.33 days."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Quantitative Aptitude",
-    "difficulty": "Advanced",
-    "question": "A shopkeeper marks his goods 30% above the cost price and gives a discount of 10% to the customers. At the time of selling, he uses 100g less weight for every 1 kg. His total profit percentage is:",
-    "options": {
-      "A": "25%",
-      "B": "30%",
-      "C": "17%",
-      "D": "20%"
-    },
-    "correctAnswer": "B",
-    "explanation": "Let CP of 1000g be Rs. 1000. Marked Price = Rs. 1300. Selling Price after 10% discount = 1300 * 0.9 = Rs. 1170. He sells only 900g for Rs. 1170. CP of 900g is Rs. 900. Profit = 1170 - 900 = Rs. 270. Profit percentage = (270 / 900) * 100 = 30%."
-  },
-  {
-    "exam": "SSC",
-    "subject": "English",
-    "difficulty": "Beginner",
-    "question": "Choose the synonym of 'ABANDON':",
-    "options": {
-      "A": "Adopt",
-      "B": "Forsake",
-      "C": "Maintain",
-      "D": "Keep"
-    },
-    "correctAnswer": "B",
-    "explanation": "Abandon means to leave completely or give up, which matches 'Forsake' (to renounce or desert)."
-  },
-  {
-    "exam": "SSC",
-    "subject": "English",
-    "difficulty": "Intermediate",
-    "question": "Identify the part of speech of the underlined word in the sentence: She sang the song 'beautifully'.",
-    "options": {
-      "A": "Noun",
-      "B": "Adjective",
-      "C": "Adverb",
-      "D": "Verb"
-    },
-    "correctAnswer": "C",
-    "explanation": "The word 'beautifully' describes how she sang (modifying the verb 'sang'), which makes it an adverb."
-  },
-  {
-    "exam": "SSC",
-    "subject": "English",
-    "difficulty": "Advanced",
-    "question": "Fill in the blank with the correct option: If he _______ hard, he would have passed the examination.",
-    "options": {
-      "A": "studied",
-      "B": "had studied",
-      "C": "would study",
-      "D": "has studied"
-    },
-    "correctAnswer": "B",
-    "explanation": "This is a third conditional sentence (unreal past situation): If + past perfect (had studied), would have + past participle (would have passed)."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Reasoning",
-    "difficulty": "Beginner",
-    "question": "If CAT is coded as 24 (C=3, A=1, T=20), how is DOG coded?",
-    "options": {
-      "A": "22",
-      "B": "26",
-      "C": "28",
-      "D": "30"
-    },
-    "correctAnswer": "B",
-    "explanation": "D=4, O=15, G=7. Sum of positions = 4 + 15 + 7 = 26."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Reasoning",
-    "difficulty": "Intermediate",
-    "question": "Complete the series: 2, 6, 12, 20, 30, ?",
-    "options": {
-      "A": "40",
-      "B": "42",
-      "C": "44",
-      "D": "46"
-    },
-    "correctAnswer": "B",
-    "explanation": "The difference between consecutive terms increases by 2: 6-2=4, 12-6=6, 20-12=8, 30-20=10. The next difference is 12, so 30 + 12 = 42."
-  },
-  {
-    "exam": "SSC",
-    "subject": "Reasoning",
-    "difficulty": "Advanced",
-    "question": "Point A is 10m North of Point B. Point C is 10m East of Point B. Point D is 5m South of Point C. What is the shortest distance between Point A and Point D?",
-    "options": {
-      "A": "15m",
-      "B": "18.02m",
-      "C": "25m",
-      "D": "11.18m"
-    },
-    "correctAnswer": "B",
-    "explanation": "Using Cartesian coordinates: B = (0,0), A = (0,10), C = (10,0), D = (10,-5). Shortest distance AD = sqrt((10-0)^2 + (-5-10)^2) = sqrt(100 + 225) = sqrt(325) = 18.02m."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Physics",
-    "difficulty": "Beginner",
-    "question": "The equivalent resistance of two resistors of 6 ohms and 3 ohms connected in parallel is:",
-    "options": {
-      "A": "9 ohms",
-      "B": "2 ohms",
-      "C": "4.5 ohms",
-      "D": "18 ohms"
-    },
-    "correctAnswer": "B",
-    "explanation": "For parallel connection: 1/R = 1/R1 + 1/R2 = 1/6 + 1/3 = 3/6 = 1/2. Thus, R = 2 ohms."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Physics",
-    "difficulty": "Intermediate",
-    "question": "An electron enters a uniform magnetic field of 2T with a velocity of 3*10^7 m/s perpendicular to the field. The radius of the circular path of the electron is (mass = 9*10^-31 kg, charge = 1.6*10^-19 C):",
-    "options": {
-      "A": "8.4 mm",
-      "B": "0.084 mm",
-      "C": "0.84 mm",
-      "D": "84 mm"
-    },
-    "correctAnswer": "B",
-    "explanation": "Radius r = (m * v) / (q * B) = (9*10^-31 * 3*10^7) / (1.6*10^-19 * 2) = 27*10^-24 / 3.2*10^-19 = 8.43 * 10^-5 m = 0.084 mm."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Physics",
-    "difficulty": "Advanced",
-    "question": "A capillary tube of radius r is dipped in water, and water rises to a height h. The mass of water in the capillary is M. If the radius is doubled, the mass of water that rises in the capillary is:",
-    "options": {
-      "A": "M",
-      "B": "2M",
-      "C": "M/2",
-      "D": "4M"
-    },
-    "correctAnswer": "B",
-    "explanation": "Height of rise h is inversely proportional to radius r (h * r = constant). Mass of water M = density * volume = density * pi * r^2 * h. Since h is proportional to 1/r, M is proportional to r^2 * (1/r) = r. If radius is doubled, mass is doubled, so 2M."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Chemistry",
-    "difficulty": "Beginner",
-    "question": "Which of the following elements has the highest electronegativity?",
-    "options": {
-      "A": "Oxygen",
-      "B": "Fluorine",
-      "C": "Chlorine",
-      "D": "Nitrogen"
-    },
-    "correctAnswer": "B",
-    "explanation": "Fluorine is the most electronegative element in the periodic table with a value of 4.0 on the Pauling scale."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Chemistry",
-    "difficulty": "Intermediate",
-    "question": "The number of unpaired electrons in gaseous Fe^2+ ion in its ground state is (Atomic number of Fe = 26):",
-    "options": {
-      "A": "0",
-      "B": "2",
-      "C": "4",
-      "D": "6"
-    },
-    "correctAnswer": "C",
-    "explanation": "Fe has configuration [Ar] 3d^6 4s^2. Fe^2+ loses two 4s electrons, giving [Ar] 3d^6. According to Hund's rule, 3d^6 has one paired orbital and 4 unpaired electrons."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Chemistry",
-    "difficulty": "Advanced",
-    "question": "The value of standard cell potential for a cell involving 2-electron transfer is found to be 0.59 V at 298K. The equilibrium constant for the reaction is: (Take 2.303 RT/F = 0.059 V)",
-    "options": {
-      "A": "10^10",
-      "B": "10^20",
-      "C": "10^5",
-      "D": "10^15"
-    },
-    "correctAnswer": "B",
-    "explanation": "E°cell = (0.059 / n) * log(K) => 0.59 = (0.059 / 2) * log(K) => log(K) = (0.59 * 2) / 0.059 = 20. Thus, K = 10^20."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Mathematics",
-    "difficulty": "Beginner",
-    "question": "The derivative of sin(x^2) with respect to x is:",
-    "options": {
-      "A": "2x * cos(x^2)",
-      "B": "cos(x^2)",
-      "C": "2x * sin(x)",
-      "D": "-2x * cos(x^2)"
-    },
-    "correctAnswer": "A",
-    "explanation": "By applying the chain rule: d/dx[sin(x^2)] = cos(x^2) * d/dx[x^2] = 2x * cos(x^2)."
-  },
-  {
-    "exam": "WBJEE",
-    "subject": "Mathematics",
-    "difficulty": "Intermediate",
-    "question": "The value of limit as x approaches 0 of (e^x - 1 - x) / x^2 is:",
+    "question": "In the quadratic function f(x) = a(x - h)^2 + k, the vertex is at (3, -4). If the y-intercept of the graph of f is 5, what is the value of a?",
     "options": {
       "A": "1",
-      "B": "1/2",
-      "C": "0",
-      "D": "Infinity"
+      "B": "2",
+      "C": "3",
+      "D": "4"
     },
-    "correctAnswer": "B",
-    "explanation": "Using L'Hopital's rule twice: lim (e^x - 1) / 2x = lim e^x / 2 = 1/2. Alternatively, using e^x expansion: (1 + x + x^2/2 + ... - 1 - x) / x^2 = 1/2."
+    "correctAnswer": "A",
+    "explanation": "With vertex (3, -4), f(x) = a(x - 3)^2 - 4. The y-intercept is at (0, 5), so f(0) = a(0 - 3)^2 - 4 = 5 => 9a - 4 = 5 => 9a = 9 => a = 1."
   },
   {
-    "exam": "WBJEE",
-    "subject": "Mathematics",
+    "exam": "SAT",
+    "section": "SAT Math",
     "difficulty": "Advanced",
-    "question": "If A and B are symmetric matrices of same order, then AB - BA is a:",
+    "question": "If x > 0 and x^4 - 13x^2 + 36 = 0, which of the following is a possible value of x?",
     "options": {
-      "A": "Symmetric matrix",
-      "B": "Skew-symmetric matrix",
-      "C": "Zero matrix",
-      "D": "Identity matrix"
+      "A": "1",
+      "B": "2",
+      "C": "4",
+      "D": "5"
     },
     "correctAnswer": "B",
-    "explanation": "Let C = AB - BA. C^T = (AB - BA)^T = (AB)^T - (BA)^T = B^T A^T - A^T B^T. Since A and B are symmetric, A^T = A and B^T = B. So C^T = BA - AB = -(AB - BA) = -C. Thus, it is skew-symmetric."
+    "explanation": "Let u = x^2. The equation becomes u^2 - 13u + 36 = 0 => (u - 9)(u - 4) = 0 => x^2 = 9 or x^2 = 4. Since x > 0, the possible values are x = 3 or x = 2."
   },
   {
-    "exam": "JEE",
-    "subject": "Physics",
-    "difficulty": "Beginner",
-    "question": "A car starts from rest and moves with uniform acceleration. Which formula gives final velocity?",
+    "exam": "SAT",
+    "section": "SAT Math",
+    "difficulty": "Advanced",
+    "question": "If the system of equations y = 3x - 5 and y = x^2 + c has exactly one real solution, what is the value of c?",
     "options": {
-      "A": "v = u + at",
-      "B": "v = u - at",
-      "C": "v = at²",
-      "D": "v = u/a"
+      "A": "-11/4",
+      "B": "-2",
+      "C": "-3/4",
+      "D": "1"
     },
     "correctAnswer": "A",
-    "explanation": "This is the first equation of motion for uniformly accelerated motion."
+    "explanation": "Set the equations equal: x^2 - 3x + (c + 5) = 0. For exactly one solution, the discriminant must be zero: b^2 - 4ac = 9 - 4(1)(c + 5) = 0 => 9 - 4c - 20 = 0 => 4c = -11 => c = -11/4."
   },
   {
-    "exam": "JEE",
-    "subject": "Chemistry",
+    "exam": "SAT",
+    "section": "SAT Reading",
     "difficulty": "Beginner",
-    "question": "Which state of matter has fixed volume but no fixed shape?",
+    "question": "[Passage: The city was quiet at dawn, the streets clean of the daytime traffic. Only a few workers walked briskly toward the subway, their collars turned up against the morning chill.] As used in the passage, 'clean' most nearly means:",
     "options": {
-      "A": "Solid",
-      "B": "Liquid",
-      "C": "Gas",
-      "D": "Plasma"
+      "A": "sanitized",
+      "B": "empty",
+      "C": "honest",
+      "D": "polished"
     },
     "correctAnswer": "B",
-    "explanation": "Liquids retain volume but take container shape."
+    "explanation": "The context describes quiet streets before traffic starts. 'Clean of traffic' means 'empty of traffic'."
   },
   {
-    "exam": "JEE",
-    "subject": "Mathematics",
+    "exam": "SAT",
+    "section": "SAT Reading",
     "difficulty": "Beginner",
-    "question": "Value of sin 90° is:",
+    "question": "[Passage: The city was quiet at dawn, the streets clean of the daytime traffic. Only a few workers walked briskly toward the subway, their collars turned up against the morning chill.] Based on the passage, the atmosphere at dawn is best described as:",
     "options": {
-      "A": "0",
-      "B": "1",
-      "C": "-1",
-      "D": "0.5"
+      "A": "hostile",
+      "B": "tranquil",
+      "C": "chaotic",
+      "D": "festive"
     },
     "correctAnswer": "B",
-    "explanation": "Standard trigonometric value."
+    "explanation": "The city is described as quiet and free of heavy daytime traffic, indicating a calm or tranquil setting."
   },
   {
-    "exam": "JEE",
-    "subject": "Chemistry",
+    "exam": "SAT",
+    "section": "SAT Reading",
     "difficulty": "Beginner",
-    "question": "Which is a noble gas?",
+    "question": "[Passage: Although solar energy is abundant, capturing and storing it efficiently remains a technical hurdle.] The author indicates that the primary difficulty with solar energy is:",
     "options": {
-      "A": "Oxygen",
-      "B": "Nitrogen",
-      "C": "Argon",
-      "D": "Hydrogen"
+      "A": "lack of availability",
+      "B": "high consumer cost",
+      "C": "storage and capture technology",
+      "D": "environmental impact"
     },
     "correctAnswer": "C",
-    "explanation": "Argon belongs to Group 18 noble gases."
+    "explanation": "The passage states that capturing and storing solar energy efficiently remains a technical hurdle."
   },
   {
-    "exam": "JEE",
-    "subject": "Physics",
+    "exam": "SAT",
+    "section": "SAT Reading",
     "difficulty": "Beginner",
-    "question": "Work is defined as:",
+    "question": "[Passage: The protagonist's resolve did not falter, even as the storm grew more violent.] As used in the passage, the word 'resolve' most nearly means:",
     "options": {
-      "A": "Force × distance",
-      "B": "Mass × acceleration",
-      "C": "Force / distance",
-      "D": "Energy × time"
+      "A": "explanation",
+      "B": "determination",
+      "C": "solution",
+      "D": "hesitation"
+    },
+    "correctAnswer": "B",
+    "explanation": "The context refers to the protagonist's mental strength and persistence. 'Resolve' thus means 'determination'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Beginner",
+    "question": "[Passage: The report warns that deforestation will accelerate soil erosion, leading to lower crop yields.] Deforestation directly causes which of the following according to the passage?",
+    "options": {
+      "A": "Increased crop yields",
+      "B": "Decreased erosion",
+      "C": "Accelerated soil erosion",
+      "D": "Climate stability"
+    },
+    "correctAnswer": "C",
+    "explanation": "The passage explicitly states that deforestation will 'accelerate soil erosion'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Intermediate",
+    "question": "[Passage: Scholars have long debated the origin of the manuscript, with some arguing it was written in Rome and others suggesting Venice. Recent ink analysis supports the Venice hypothesis.] What is the main purpose of the passage?",
+    "options": {
+      "A": "To describe Rome's historical monuments.",
+      "B": "To resolve a debate using new scientific evidence.",
+      "C": "To critique the Venice hypothesis as flawed.",
+      "D": "To explain medieval ink manufacturing methods."
+    },
+    "correctAnswer": "B",
+    "explanation": "The passage introduces a debate between Rome and Venice and then shows how a scientific method (ink analysis) supports one side."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Intermediate",
+    "question": "[Passage: Scholars have long debated the origin of the manuscript, with some arguing it was written in Rome and others suggesting Venice. Recent ink analysis supports the Venice hypothesis.] Based on the passage, the debate about the manuscript's origin:",
+    "options": {
+      "A": "has been settled for centuries",
+      "B": "is a topic of ongoing academic discussion",
+      "C": "was initiated by ink manufacturers",
+      "D": "is ignored by modern historians"
+    },
+    "correctAnswer": "B",
+    "explanation": "The phrase 'Scholars have long debated' indicates that it is a long-standing and active academic discussion."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Intermediate",
+    "question": "[Passage: The novelist's prose was ornate, filled with complex metaphors that delighted critics but occasionally alienated casual readers.] The author implies that the novelist's writing style:",
+    "options": {
+      "A": "is universally disliked",
+      "B": "is too simple for academic critics",
+      "C": "appeals more to critics than to casual readers",
+      "D": "avoids figurative language completely"
+    },
+    "correctAnswer": "C",
+    "explanation": "The novelist's style delighted critics but alienated casual readers, suggesting it has selective appeal."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Intermediate",
+    "question": "[Passage: Marine biologists observed that certain coral species survived temperature increases by hosting specific algae strains.] Which choice provides the best evidence for the claim that coral survival is linked to algae?",
+    "options": {
+      "A": "Marine biologists observed",
+      "B": "coral species survived",
+      "C": "survived temperature increases",
+      "D": "by hosting specific algae strains"
+    },
+    "correctAnswer": "D",
+    "explanation": "The survival mechanism under temperature increases is specified as hosting specific algae strains."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Intermediate",
+    "question": "[Passage: Marine biologists observed that certain coral species survived temperature increases by hosting specific algae strains.] As used in the passage above, the word 'hosting' most nearly means:",
+    "options": {
+      "A": "entertaining",
+      "B": "harboring",
+      "C": "presenting",
+      "D": "celebrating"
+    },
+    "correctAnswer": "B",
+    "explanation": "In biology, a host contains or harbors another organism. Therefore, 'harboring' is the closest synonym."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Advanced",
+    "question": "[Passage 1: Electric vehicles (EVs) are the key to reducing urban emissions and combating climate change. Passage 2: While EVs reduce tailpipe emissions, the carbon footprint of battery manufacturing and electricity generation must not be overlooked.] How does the author of Passage 2 respond to the perspective in Passage 1?",
+    "options": {
+      "A": "By fully endorsing rapid EV adoption.",
+      "B": "By pointing out overlooked environmental costs of EVs.",
+      "C": "By suggesting that gasoline cars are cleaner in cities.",
+      "D": "By focusing on urban traffic congestion patterns."
+    },
+    "correctAnswer": "B",
+    "explanation": "Passage 2 highlights the carbon footprint of battery production and electricity generation, which are hidden environmental costs of EVs."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Advanced",
+    "question": "[Passage 1: Electric vehicles (EVs) are the key to reducing urban emissions and combating climate change. Passage 2: While EVs reduce tailpipe emissions, the carbon footprint of battery manufacturing and electricity generation must not be overlooked.] Which of the following best describes the relationship between the two passages?",
+    "options": {
+      "A": "Passage 2 disproves the main scientific claim of Passage 1.",
+      "B": "Passage 2 qualifies the optimistic claim made in Passage 1.",
+      "C": "Passage 2 provides historical context for Passage 1.",
+      "D": "Passage 2 proposes an alternative technology to EVs."
+    },
+    "correctAnswer": "B",
+    "explanation": "Passage 1 makes a broad claim about EVs solving climate issues, while Passage 2 qualifies this optimism by adding important conditions and lifecycle emissions."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Advanced",
+    "question": "[Passage: The discovery of gravitational waves confirmed a key prediction of Einstein's general theory of relativity, a century after it was formulated. This milestone has opened a new window into observing the universe.] The author uses the phrase 'new window' to suggest that the discovery:",
+    "options": {
+      "A": "makes current telescope models obsolete",
+      "B": "provides a novel method of astronomical observation",
+      "C": "confirms Einstein was completely correct",
+      "D": "is only of interest to theoretical physicists"
+    },
+    "correctAnswer": "B",
+    "explanation": "The 'new window' means astronomers can now detect and study astronomical events using gravity waves, a completely new method of observing."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Advanced",
+    "question": "[Passage: The discovery of gravitational waves confirmed a key prediction of Einstein's general theory of relativity, a century after it was formulated. This milestone has opened a new window into observing the universe.] The passage implies that Einstein's prediction was:",
+    "options": {
+      "A": "immediately verified by peer reviewers",
+      "B": "controversial for over a century",
+      "C": "difficult to prove experimentally at the time",
+      "D": "eventually disproved by modern research"
+    },
+    "correctAnswer": "C",
+    "explanation": "The confirmation occurred 'a century after it was formulated,' showing that experimental technology took 100 years to reach the required sensitivity."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Reading",
+    "difficulty": "Advanced",
+    "question": "[Passage: The discovery of gravitational waves confirmed a key prediction of Einstein's general theory of relativity, a century after it was formulated. This milestone has opened a new window into observing the universe.] As used in the passage above, 'formulated' most nearly means:",
+    "options": {
+      "A": "calculated",
+      "B": "expressed",
+      "C": "combined",
+      "D": "disguised"
+    },
+    "correctAnswer": "B",
+    "explanation": "Einstein 'formulated' or expressed/stated his theory a century ago."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the option that best corrects the underlined portion: 'The team of scientists <u>are conducting</u> research in Antarctica.'",
+    "options": {
+      "A": "are conducting",
+      "B": "is conducting",
+      "C": "conduct",
+      "D": "have conducted"
+    },
+    "correctAnswer": "B",
+    "explanation": "The subject of the sentence is 'team' (singular), not 'scientists' (which is in a prepositional phrase). Thus, the verb must be singular 'is conducting'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the option that best corrects the underlined portion: 'The store was closed, <u>however, we</u> were able to order online.'",
+    "options": {
+      "A": "however, we",
+      "B": "however; we",
+      "C": ". However, we",
+      "D": "however we"
+    },
+    "correctAnswer": "C",
+    "explanation": "'However' cannot connect two independent clauses with only a comma (comma splice). Splitting into two sentences is grammatically correct."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the option that best corrects the underlined portion: 'She visited Paris, London, <u>and Rome, they</u> are her favorite cities.'",
+    "options": {
+      "A": "and Rome, they",
+      "B": "and Rome; which",
+      "C": "and Rome. These",
+      "D": "and Rome, these"
+    },
+    "correctAnswer": "C",
+    "explanation": "The original creates a comma splice. Option C resolves this by starting a new sentence: 'and Rome. These are her favorite cities.'"
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the option that best corrects the underlined portion: 'Neither the teacher nor the students <u>was aware</u> of the schedule change.'",
+    "options": {
+      "A": "was aware",
+      "B": "were aware",
+      "C": "is aware",
+      "D": "are aware"
+    },
+    "correctAnswer": "B",
+    "explanation": "When subject nouns are joined by 'neither... nor...', the verb agrees with the closer noun. 'students' is plural, so 'were aware' is correct."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Beginner",
+    "question": "Choose the option that best corrects the underlined portion: 'He ran quickly, jumped the fence, and <u>escapes</u> into the alley.'",
+    "options": {
+      "A": "escapes",
+      "B": "escaping",
+      "C": "escaped",
+      "D": "had escaped"
+    },
+    "correctAnswer": "C",
+    "explanation": "Parallel structure is required. The verbs 'ran' and 'jumped' are in the past tense, so 'escaped' must be used."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Intermediate",
+    "question": "Identify the transition word that best fits the blank: 'The experiment was a success. ________, the researchers published their findings immediately.'",
+    "options": {
+      "A": "However",
+      "B": "Consequently",
+      "C": "Nevertheless",
+      "D": "Conversely"
+    },
+    "correctAnswer": "B",
+    "explanation": "'Consequently' shows a logical cause-and-effect relationship between the success of the experiment and the publication."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Intermediate",
+    "question": "Choose the option that best corrects the underlined portion: 'Although she studied diligently <u>but she</u> did not pass the exam.'",
+    "options": {
+      "A": "but she",
+      "B": "she",
+      "C": "and she",
+      "D": "however she"
+    },
+    "correctAnswer": "B",
+    "explanation": "The conjunction 'Although' starts a dependent clause, so a coordinating conjunction like 'but' or 'and' should not be used to start the main clause."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Intermediate",
+    "question": "Choose the option that best corrects the underlined portion: 'The artwork <u>who was</u> painted by Picasso sold for millions.'",
+    "options": {
+      "A": "who was",
+      "B": "which was",
+      "C": "whom was",
+      "D": "what was"
+    },
+    "correctAnswer": "B",
+    "explanation": "Relative pronoun 'who' is for humans; inanimate objects like 'artwork' require 'which' or 'that'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Intermediate",
+    "question": "Choose the option that best corrects the underlined portion: 'Having finished the report, <u>the laptop was closed</u> by Mark.'",
+    "options": {
+      "A": "the laptop was closed by Mark",
+      "B": "Mark closed the laptop",
+      "C": "closing the laptop by Mark",
+      "D": "the laptop closed"
+    },
+    "correctAnswer": "B",
+    "explanation": "Dangling modifier. The opening phrase 'Having finished...' describes the person who finished (Mark). The subject following must be 'Mark'."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Intermediate",
+    "question": "Choose the option that best corrects the underlined portion: 'It's important to verify <u>your</u> credentials before logging in.'",
+    "options": {
+      "A": "your",
+      "B": "you're",
+      "C": "one's",
+      "D": "yours"
     },
     "correctAnswer": "A",
-    "explanation": "Basic physics definition of work."
+    "explanation": "The possessive adjective 'your' correctly modifies the noun 'credentials'."
   },
   {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "What is the basic unit of life?",
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Advanced",
+    "question": "Choose the option that best corrects the underlined portion to achieve conciseness: 'The committee came to a decision to <u>make a choice to select</u> the first proposal.'",
     "options": {
-      "A": "Tissue",
-      "B": "Cell",
-      "C": "Organ",
-      "D": "Organ system"
+      "A": "make a choice to select",
+      "B": "select",
+      "C": "select out",
+      "D": "make a selection of"
     },
     "correctAnswer": "B",
-    "explanation": "Cell is the structural unit of life."
+    "explanation": "'Select' is direct, clean, and avoids wordy/redundant phrasing."
   },
   {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "Which pigment is responsible for photosynthesis?",
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Advanced",
+    "question": "Choose the option that best corrects the underlined portion: 'The discovery of the new planet, along with its three moons, <u>have intrigued</u> astronomers.'",
     "options": {
-      "A": "Hemoglobin",
-      "B": "Chlorophyll",
-      "C": "Melanin",
-      "D": "Keratin"
+      "A": "have intrigued",
+      "B": "has intrigued",
+      "C": "are intriguing",
+      "D": "intrigue"
     },
     "correctAnswer": "B",
-    "explanation": "Chlorophyll absorbs sunlight for photosynthesis."
+    "explanation": "The subject is 'discovery' (singular). The modifying phrase 'along with its three moons' is parenthetical and does not make the subject plural. Thus, 'has intrigued' is correct."
   },
   {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "Which organ pumps blood?",
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Advanced",
+    "question": "Choose the option that best corrects the underlined portion: 'We must ensure that the rules are applied <u>fairly, and equitably</u> to all participants.'",
     "options": {
-      "A": "Liver",
-      "B": "Brain",
-      "C": "Heart",
-      "D": "Lungs"
-    },
-    "correctAnswer": "C",
-    "explanation": "Heart circulates blood in humans."
-  },
-  {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "Plants absorb which gas during photosynthesis?",
-    "options": {
-      "A": "Oxygen",
-      "B": "Carbon dioxide",
-      "C": "Nitrogen",
-      "D": "Hydrogen"
+      "A": "fairly, and equitably",
+      "B": "fairly and equitably",
+      "C": "fairly; and equitably",
+      "D": "fairly and, equitably"
     },
     "correctAnswer": "B",
-    "explanation": "CO₂ is used to produce glucose."
+    "explanation": "Do not separate two items in a simple compound adverb structure with a comma."
   },
   {
-    "exam": "NEET",
-    "subject": "Biology",
-    "difficulty": "Beginner",
-    "question": "DNA is found in:",
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Advanced",
+    "question": "Choose the option that best corrects the underlined portion: 'She prefers writing essays to <u>taking</u> multiple-choice exams.'",
     "options": {
-      "A": "Ribosome",
-      "B": "Nucleus",
-      "C": "Cell wall",
-      "D": "Cytoplasm"
+      "A": "taking",
+      "B": "take",
+      "C": "when taking",
+      "D": "if she takes"
+    },
+    "correctAnswer": "A",
+    "explanation": "Maintain parallel structure: 'prefers writing... to taking...'. Both actions should be expressed as gerunds."
+  },
+  {
+    "exam": "SAT",
+    "section": "SAT Writing & Language",
+    "difficulty": "Advanced",
+    "question": "Choose the option that best corrects the underlined portion: 'The historical evidence suggests that the battle occurred <u>later then</u> previously thought.'",
+    "options": {
+      "A": "later then",
+      "B": "later than",
+      "C": "more late than",
+      "D": "more late then"
     },
     "correctAnswer": "B",
-    "explanation": "DNA is stored in nucleus."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Polity",
-    "difficulty": "Beginner",
-    "question": "Who is the constitutional head of India?",
-    "options": {
-      "A": "Prime Minister",
-      "B": "President",
-      "C": "Chief Justice",
-      "D": "Governor"
-    },
-    "correctAnswer": "B",
-    "explanation": "President is the head of state."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Polity",
-    "difficulty": "Beginner",
-    "question": "Indian Parliament consists of:",
-    "options": {
-      "A": "Lok Sabha only",
-      "B": "Rajya Sabha only",
-      "C": "Lok Sabha and Rajya Sabha",
-      "D": "President only"
-    },
-    "correctAnswer": "C",
-    "explanation": "Parliament has two houses."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Geography",
-    "difficulty": "Beginner",
-    "question": "Currency of India is:",
-    "options": {
-      "A": "Dollar",
-      "B": "Rupee",
-      "C": "Euro",
-      "D": "Yen"
-    },
-    "correctAnswer": "B",
-    "explanation": "Indian currency is Rupee."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "History",
-    "difficulty": "Beginner",
-    "question": "India became a republic in:",
-    "options": {
-      "A": "1947",
-      "B": "1949",
-      "C": "1950",
-      "D": "1952"
-    },
-    "correctAnswer": "C",
-    "explanation": "26 January 1950."
-  },
-  {
-    "exam": "UPSC",
-    "subject": "Polity",
-    "difficulty": "Beginner",
-    "question": "Largest democracy in the world:",
-    "options": {
-      "A": "USA",
-      "B": "India",
-      "C": "China",
-      "D": "Russia"
-    },
-    "correctAnswer": "B",
-    "explanation": "India is largest by population."
+    "explanation": "Use 'than' for comparative expressions ('later than'), whereas 'then' refers to time/sequence."
   }
 ]

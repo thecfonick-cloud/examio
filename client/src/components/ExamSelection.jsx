@@ -10,8 +10,8 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
   // Selected subject per exam: { examId: subjectName }
   const [selectedSubjects, setSelectedSubjects] = useState({})
   
-  // Target UPSC track by default as requested
-  const [activeExamId, setActiveExamId] = useState('UPSC')
+  // Target SAT track by default
+  const [activeExamId, setActiveExamId] = useState('SAT')
   
   const [countdown, setCountdown] = useState(0)
   const [lockModalInfo, setLockModalInfo] = useState(null)
@@ -190,7 +190,7 @@ export default function ExamSelection({ user, onSelectExam, fetchUserStatus, onO
     { id: 'acc_master', title: 'Speed Scholar', desc: '90%+ accuracy on any test', icon: '🎯', unlocked: resultsHistory.some(r => r.accuracy >= 90) },
     { id: 'streak_pioneer', title: 'Consistency King', desc: 'Maintain a 3-day active streak', icon: '🔥', unlocked: streakDays >= 3 },
     { id: 'xp_champion', title: 'XP Elite', desc: 'Accumulate 500+ XP points', icon: '⚡', unlocked: user.xp >= 500 },
-    { id: 'multi_exam', title: 'Polymath', desc: 'Practice in 2+ exam tracks', icon: '🧠', unlocked: new Set(resultsHistory.map(r => r.exam_id)).size >= 2 }
+    { id: 'multi_exam', title: 'Polymath', desc: 'Practice in 2+ SAT sections', icon: '🧠', unlocked: new Set(resultsHistory.map(r => r.subject)).size >= 2 }
   ]
 
   if (loading) {

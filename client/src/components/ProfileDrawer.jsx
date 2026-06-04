@@ -8,7 +8,7 @@ export default function ProfileDrawer({ user, isOpen, onClose, onLogout, setCurr
   const navigationItems = [
     {
       id: 'dashboard',
-      label: 'Prepare Arena (UPSC)',
+      label: 'Prepare Arena (SAT)',
       desc: 'Active syllabus dashboard & pathway levels',
       icon: BookOpen,
       color: 'text-indigo-600 bg-indigo-50 border-indigo-100'

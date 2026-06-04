@@ -21,11 +21,7 @@ initDb().then(() => {
 
 // Subjects Mapping for Exams
 const EXAM_SUBJECTS = {
-  JEE: ['Physics', 'Chemistry', 'Mathematics'],
-  NEET: ['Physics', 'Chemistry', 'Biology'],
-  UPSC: ['History', 'Polity', 'Geography'],
-  SSC: ['Quantitative Aptitude', 'English', 'Reasoning'],
-  WBJEE: ['Physics', 'Chemistry', 'Mathematics']
+  SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
 }
 
 // Help helper to calculate the lock time left (24 hours after beginner_completed_at)
@@ -61,7 +57,7 @@ app.post('/api/auth/login', async (req, res) => {
       const id = 'user_' + Math.random().toString(36).substr(2, 9)
       await db.run(
         'INSERT INTO users (id, email, name, xp, level, target_exam) VALUES (?, ?, ?, ?, ?, ?)',
-        [id, email, name, 0, 'Beginner', targetExam || 'JEE']
+        [id, email, name, 0, 'Beginner', targetExam || 'SAT']
       )
       user = await db.get('SELECT * FROM users WHERE email = ?', [email])
     }
@@ -73,7 +69,7 @@ app.post('/api/auth/login', async (req, res) => {
       name: user.name,
       xp: user.xp,
       level: user.level,
-      target_exam: user.target_exam || 'JEE',
+      target_exam: user.target_exam || 'SAT',
       beginner_completed_at: user.beginner_completed_at,
       lock
     })
@@ -100,7 +96,7 @@ app.get('/api/users/:userId', async (req, res) => {
       name: user.name,
       xp: user.xp,
       level: user.level,
-      target_exam: user.target_exam || 'JEE',
+      target_exam: user.target_exam || 'SAT',
       beginner_completed_at: user.beginner_completed_at,
       lock
     })
@@ -382,15 +378,16 @@ app.post('/api/questions/import', async (req, res) => {
 
     let importedCount = 0
     for (const q of questionsList) {
-      const { exam, subject, difficulty, question, options, correctAnswer, explanation } = q
+      const { exam, subject, section, difficulty, question, options, correctAnswer, explanation } = q
 
-      if (!exam || !subject || !difficulty || !question || !options || !correctAnswer) {
+      const targetSubject = section || subject
+      if (!exam || !targetSubject || !difficulty || !question || !options || !correctAnswer) {
         continue // skip malformed records
       }
 
       await stmt.run(
         exam,
-        subject,
+        targetSubject,
         difficulty,
         question,
         JSON.stringify(options),
@@ -427,8 +424,8 @@ app.post('/api/dev/seed', async (req, res) => {
     let importedCount = 0
     for (const q of questionsList) {
       await stmt.run(
-        q.exam,
-        q.subject,
+        q.exam || 'SAT',
+        q.section || q.subject,
         q.difficulty,
         q.question,
         JSON.stringify(q.options),
@@ -444,17 +441,13 @@ app.post('/api/dev/seed', async (req, res) => {
     await db.run("DELETE FROM results WHERE user_id IN (SELECT id FROM users WHERE email LIKE '%@mock.com')")
     await db.run("DELETE FROM users WHERE email LIKE '%@mock.com'")
 
-    // 2. Generate 50 realistic Indian scholar profiles
-    const firstNames = ['Aarav', 'Vihaan', 'Aditya', 'Arjun', 'Sai', 'Reyansh', 'Krishna', 'Ishaan', 'Shaurya', 'Atharv', 'Priya', 'Ananya', 'Sanya', 'Diya', 'Kavya', 'Riya', 'Isha', 'Aanya', 'Kiara', 'Aadhya', 'Amit', 'Rajesh', 'Sunil', 'Sanjay', 'Vikram', 'Rohan', 'Kunal', 'Sneha', 'Neha', 'Pooja', 'Rahul', 'Manoj', 'Deepak', 'Alok', 'Vivek', 'Jyoti', 'Kiran', 'Nisha', 'Meera', 'Ritu', 'Anjali', 'Swati', 'Mona', 'Preeti', 'Karan', 'Arpit', 'Abhishek', 'Varun', 'Siddharth', 'Nikhil']
-    const lastNames = ['Mehta', 'Sharma', 'Patel', 'Sen', 'Joshi', 'Gupta', 'Verma', 'Kumar', 'Singh', 'Nair', 'Iyer', 'Reddy', 'Choudhury', 'Das', 'Roy', 'Banerjee', 'Chatterjee', 'Mishra', 'Pandey', 'Trivedi', 'Bose', 'Dutta', 'Rao', 'Shah', 'Desai', 'Gawde', 'Kulkarni', 'Naik', 'Patil', 'Pillai', 'Menon', 'Shetty', 'Hegde', 'Gowda', 'Prasad', 'Sinha', 'Chawla', 'Kapoor', 'Malhotra', 'Bhasin', 'Gill', 'Dhillon', 'Sandhu', 'Sodhi', 'Grewal', 'Johal', 'Sidhu', 'Mann', 'Brar', 'Sekhon']
+    // 2. Generate 50 realistic global scholar profiles
+    const firstNames = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth', 'David', 'Barbara', 'Richard', 'Susan', 'Joseph', 'Jessica', 'Thomas', 'Sarah', 'Charles', 'Karen', 'Christopher', 'Lisa', 'Daniel', 'Nancy', 'Matthew', 'Betty', 'Anthony', 'Sandra', 'Mark', 'Margaret', 'Donald', 'Ashley', 'Steven', 'Kimberly', 'Paul', 'Emily', 'Andrew', 'Donna', 'Joshua', 'Michelle', 'Kenneth', 'Carol', 'Kevin', 'Amanda', 'Brian', 'Melissa', 'George', 'Deborah', 'Timothy', 'Stephanie']
+    const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin', 'Lee', 'Perez', 'Thompson', 'White', 'Harris', 'Sanchez', 'Clark', 'Ramirez', 'Lewis', 'Robinson', 'Walker', 'Young', 'Allen', 'King', 'Wright', 'Scott', 'Torres', 'Nguyen', 'Hill', 'Flores', 'Green', 'Adams', 'Nelson', 'Baker', 'Hall', 'Rivera', 'Campbell', 'Mitchell', 'Carter', 'Roberts']
 
-    const exams = ['JEE', 'NEET', 'UPSC', 'SSC', 'WBJEE']
+    const exams = ['SAT']
     const subjectsMap = {
-      JEE: ['Physics', 'Chemistry', 'Mathematics'],
-      NEET: ['Physics', 'Chemistry', 'Biology'],
-      UPSC: ['History', 'Polity', 'Geography'],
-      SSC: ['Quantitative Aptitude', 'English', 'Reasoning'],
-      WBJEE: ['Physics', 'Chemistry', 'Mathematics']
+      SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
     }
     const difficulties = ['Beginner', 'Intermediate', 'Advanced']
 
@@ -465,7 +458,7 @@ app.post('/api/dev/seed', async (req, res) => {
       const name = `${fName} ${lName}`
       const email = `scholar_${i}@mock.com`
       const id = `mock_user_${i}`
-      const targetExam = exams[Math.floor(Math.random() * exams.length)]
+      const targetExam = 'SAT'
       
       mockUsers.push({ id, name, email, targetExam })
     }
@@ -482,18 +475,17 @@ app.post('/api/dev/seed', async (req, res) => {
       let totalXp = 0
       
       for (let j = 0; j < numResults; j++) {
-        // High likelihood to practice in target exam
-        const examId = Math.random() < 0.7 ? u.targetExam : exams[Math.floor(Math.random() * exams.length)]
+        const examId = 'SAT'
         const subjects = subjectsMap[examId]
         const subject = subjects[Math.floor(Math.random() * subjects.length)]
         const difficulty = difficulties[Math.floor(Math.random() * difficulties.length)]
         
-        const totalQuestions = 10
-        const correctAnswers = Math.floor(Math.random() * 6) + 4 // 40% to 100% correct
+        const totalQuestions = 5
+        const correctAnswers = Math.floor(Math.random() * 3) + 2 // 2 to 5 correct
         const accuracy = Math.round((correctAnswers / totalQuestions) * 100)
-        const score = correctAnswers * 10
+        const score = correctAnswers * 20
         
-        const xpEarned = 10 + (correctAnswers * 5) // Base + performance XP
+        const xpEarned = 10 + (correctAnswers * 10) // Base + performance XP
         totalXp += xpEarned
         
         const date = new Date()

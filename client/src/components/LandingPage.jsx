@@ -9,28 +9,28 @@ export default function LandingPage({ onShowAuth }) {
   const [activeSlide, setActiveSlide] = useState(0);
   const slideAvatars = [
     {
-      name: "Priya Patel",
-      role: "JEE Rank #94 | Ahmedabad, Gujarat",
+      name: "Emily Smith",
+      role: "SAT Math Elite | New York, NY",
       stars: 5,
       xp: "280+ Practice Points",
       metric: "96.5% Accuracy",
       quote: "Examio's random question loading ensured I never memorized answers. The 24-hour cooldown after the beginner exam forced me to rest, review my formulas, and prepare systematically. Passing the intermediate pool boosted my CBT exam confidence tremendously!"
     },
     {
-      name: "Aditya Sharma",
-      role: "NEET Scholar | New Delhi, Delhi",
+      name: "Alexander Chen",
+      role: "SAT Reading Scholar | San Francisco, CA",
       stars: 5,
-      xp: "Biology Track",
+      xp: "Reading Track",
       metric: "+340 XP Gained",
-      quote: "Success in medical entrances isn't just about reading textbooks; it is about working smart under a timer. Examio helped me identify biology concept gaps. Seeing my rank change live on the exam-wise scoreboard pushed me to strive for the gold medal rank!"
+      quote: "Success in the SAT isn't just about reading passages; it is about working smart under a timer. Examio helped me identify reading comprehension concept gaps. Seeing my rank change live on the section scoreboard pushed me to strive for the top rank!"
     },
     {
-      name: "Rohan Sen",
-      role: "UPSC Candidate | Pune, Maharashtra",
+      name: "Sarah Jenkins",
+      role: "SAT Writing Specialist | Chicago, IL",
       stars: 5,
-      xp: "Polity & History",
+      xp: "Writing & Language",
       metric: "Rank #3 Global",
-      quote: "The dynamic question injection mimics the unpredictable nature of UPSC. Having detailed explanations immediately after completing the test allowed me to clear doubt loops. I recommend this platform to anyone serious about mock tests."
+      quote: "The dynamic question injection mimics the unpredictable nature of the SAT Writing section. Having detailed explanations immediately after completing the test allowed me to clear grammar doubt loops. I recommend this platform to anyone serious about mock tests."
     }
   ];
 
@@ -43,11 +43,9 @@ export default function LandingPage({ onShowAuth }) {
   }, []);
 
   const arenas = [
-    { id: 'JEE', name: 'JEE Engineering', active: '14.2K', avg: '68%', heat: 'Extreme', desc: 'Joint Entrance Examination for top IITs/NITs.', color: 'from-orange-500/20 to-red-500/10 text-orange-500 border-orange-500/25' },
-    { id: 'NEET', name: 'NEET Medical', active: '18.9K', avg: '72%', heat: 'High', desc: 'National Eligibility cum Entrance Test for MBBS.', color: 'from-emerald-500/20 to-teal-500/10 text-emerald-500 border-emerald-500/25' },
-    { id: 'UPSC', name: 'UPSC Civil Services', active: '8.4K', avg: '54%', heat: 'Severe', desc: 'Union Public Service Commission civil services arena.', color: 'from-purple-500/20 to-indigo-500/10 text-purple-500 border-purple-500/25' },
-    { id: 'SSC', name: 'SSC Govt Posts', active: '22.1K', avg: '76%', heat: 'Moderate', desc: 'Staff Selection Commission government placement tracks.', color: 'from-cyan-500/20 to-blue-500/10 text-cyan-500 border-cyan-500/25' },
-    { id: 'WBJEE', name: 'WBJEE State Eng.', active: '5.2K', avg: '65%', heat: 'High', desc: 'West Bengal Joint Entrance Engineering combat.', color: 'from-amber-500/20 to-red-500/10 text-amber-500 border-amber-500/25' }
+    { id: 'SAT', name: 'SAT Math', active: '14.2K', avg: '68%', heat: 'High', desc: 'Algebra, linear equations, geometry, and data analysis.', color: 'from-orange-500/20 to-red-500/10 text-orange-500 border-orange-500/25' },
+    { id: 'SAT', name: 'SAT Reading', active: '18.9K', avg: '72%', heat: 'Moderate', desc: 'Comprehension passages and evidence-based questions.', color: 'from-emerald-500/20 to-teal-500/10 text-emerald-500 border-emerald-500/25' },
+    { id: 'SAT', name: 'SAT Writing & Language', active: '8.4K', avg: '54%', heat: 'High', desc: 'Grammar, sentence correction, punctuation, and clarity improvement.', color: 'from-purple-500/20 to-indigo-500/10 text-purple-500 border-purple-500/25' }
   ];
 
   return (
@@ -76,7 +74,7 @@ export default function LandingPage({ onShowAuth }) {
               <Sparkles className="h-3.5 w-3.5 animate-spin" />
               THE GLOBAL RANKING WAR IS ALIVE
             </motion.div>
-
+            
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +90,7 @@ export default function LandingPage({ onShowAuth }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
             >
-              Welcome to <strong>Examio</strong>, the ultimate real-time competitive exam ranking system. Attack dynamic CBT mocks, claim experience points, unlock progression ladders, and secure your place on the global leaderboard.
+              Welcome to <strong>Examio</strong>, the ultimate real-time competitive SAT ranking system. Attack dynamic CBT mocks, claim experience points, unlock progression ladders, and secure your place on the global leaderboard.
             </motion.p>
 
             {/* CTAs */}
@@ -107,7 +105,7 @@ export default function LandingPage({ onShowAuth }) {
                 className="group relative px-8 py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-cyan-500 hover:from-indigo-500 hover:to-cyan-400 text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-2 shadow-[0_4px_30px_rgba(79,70,229,0.35)] transition-all hover:scale-[1.02] active:scale-[0.98] border border-indigo-400/20"
               >
                 <Swords className="h-4 w-4 shrink-0 fill-white" />
-                ENTER THE ARENA
+                START SAT CHALLENGE
                 <ChevronRight className="h-4 w-4 shrink-0 group-hover:translate-x-1 transition-transform" />
               </button>
               
@@ -170,7 +168,7 @@ export default function LandingPage({ onShowAuth }) {
                     <span className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                     LIVE
                   </span>
-                  <span className="text-slate-400 text-[10px]">JEE Subject Battle: Physics</span>
+                  <span className="text-slate-400 text-[10px]">SAT Section Challenge: Math</span>
                   <span className="text-emerald-400 font-black">+180 XP</span>
                 </div>
 
@@ -179,7 +177,7 @@ export default function LandingPage({ onShowAuth }) {
                   <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Top Competitors Today</div>
                   <div className="space-y-1.5">
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-300 font-bold">1. Priya Patel</span>
+                      <span className="text-slate-300 font-bold">1. Emily Smith</span>
                       <span className="text-cyan-400 font-extrabold">1,540 XP</span>
                     </div>
                     <div className="flex justify-between items-center text-xs bg-indigo-500/5 p-1 rounded">
@@ -187,7 +185,7 @@ export default function LandingPage({ onShowAuth }) {
                       <span className="text-indigo-400 font-black">1,410 XP</span>
                     </div>
                     <div className="flex justify-between items-center text-xs">
-                      <span className="text-slate-300 font-bold">3. Rohan Sen</span>
+                      <span className="text-slate-300 font-bold">3. Alexander Chen</span>
                       <span className="text-slate-400 font-bold">1,380 XP</span>
                     </div>
                   </div>
@@ -395,8 +393,8 @@ export default function LandingPage({ onShowAuth }) {
               🥈
             </div>
             <div className="space-y-1">
-              <h4 className="font-extrabold text-sm text-slate-300">Aditya Sharma</h4>
-              <p className="text-xs text-slate-500">NEET Rank #2</p>
+              <h4 className="font-extrabold text-sm text-slate-300">Alexander Chen</h4>
+              <p className="text-xs text-slate-500">SAT Reading Rank #2</p>
               <div className="text-xs font-black text-cyan-400 pt-3">1,410 XP</div>
             </div>
           </motion.div>
@@ -413,8 +411,8 @@ export default function LandingPage({ onShowAuth }) {
               🥇
             </div>
             <div className="space-y-1">
-              <h4 className="font-black text-base text-white">Priya Patel</h4>
-              <p className="text-xs text-slate-400">JEE Rank #1</p>
+              <h4 className="font-black text-base text-white">Emily Smith</h4>
+              <p className="text-xs text-slate-400">SAT Math Rank #1</p>
               <div className="text-sm font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 pt-3">1,540 XP</div>
             </div>
           </motion.div>
@@ -430,8 +428,8 @@ export default function LandingPage({ onShowAuth }) {
               🥉
             </div>
             <div className="space-y-1">
-              <h4 className="font-extrabold text-sm text-slate-300">Rohan Sen</h4>
-              <p className="text-xs text-slate-500">UPSC Rank #3</p>
+              <h4 className="font-extrabold text-sm text-slate-300">Sarah Jenkins</h4>
+              <p className="text-xs text-slate-500">SAT Writing Rank #3</p>
               <div className="text-xs font-black text-indigo-400 pt-3">1,380 XP</div>
             </div>
           </motion.div>

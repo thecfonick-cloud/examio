@@ -4,12 +4,12 @@ import { Trophy, Award, Flame, Zap, ShieldAlert, Sparkles, ChevronRight, User } 
 
 export default function Leaderboard({ currentUser }) {
   const [activeTab, setActiveTab] = useState('global') // 'global' or 'exam'
-  const [selectedExam, setSelectedExam] = useState('JEE')
+  const [selectedExam, setSelectedExam] = useState('SAT')
   const [rankings, setRankings] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
-  const examsList = ['JEE', 'NEET', 'UPSC', 'SSC', 'WBJEE']
+  const examsList = ['SAT']
 
   useEffect(() => {
     async function loadLeaderboard() {

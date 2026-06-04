@@ -19,17 +19,13 @@ async function runSeed() {
   await db.run("DELETE FROM users WHERE email LIKE '%@mock.com'")
   console.log('Cleared existing mock users.')
 
-  // Generate 50 realistic Indian scholar profiles
-  const firstNames = ['Aarav', 'Vihaan', 'Aditya', 'Arjun', 'Sai', 'Reyansh', 'Krishna', 'Ishaan', 'Shaurya', 'Atharv', 'Priya', 'Ananya', 'Sanya', 'Diya', 'Kavya', 'Riya', 'Isha', 'Aanya', 'Kiara', 'Aadhya', 'Amit', 'Rajesh', 'Sunil', 'Sanjay', 'Vikram', 'Rohan', 'Kunal', 'Sneha', 'Neha', 'Pooja', 'Rahul', 'Manoj', 'Deepak', 'Alok', 'Vivek', 'Jyoti', 'Kiran', 'Nisha', 'Meera', 'Ritu', 'Anjali', 'Swati', 'Mona', 'Preeti', 'Karan', 'Arpit', 'Abhishek', 'Varun', 'Siddharth', 'Nikhil']
-  const lastNames = ['Mehta', 'Sharma', 'Patel', 'Sen', 'Joshi', 'Gupta', 'Verma', 'Kumar', 'Singh', 'Nair', 'Iyer', 'Reddy', 'Choudhury', 'Das', 'Roy', 'Banerjee', 'Chatterjee', 'Mishra', 'Pandey', 'Trivedi', 'Bose', 'Dutta', 'Rao', 'Shah', 'Desai', 'Gawde', 'Kulkarni', 'Naik', 'Patil', 'Pillai', 'Menon', 'Shetty', 'Hegde', 'Gowda', 'Prasad', 'Sinha', 'Chawla', 'Kapoor', 'Malhotra', 'Bhasin', 'Gill', 'Dhillon', 'Sandhu', 'Sodhi', 'Grewal', 'Johal', 'Sidhu', 'Mann', 'Brar', 'Sekhon']
+  // Generate 50 realistic global scholar profiles
+  const firstNames = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer', 'Michael', 'Linda', 'William', 'Elizabeth', 'David', 'Barbara', 'Richard', 'Susan', 'Joseph', 'Jessica', 'Thomas', 'Sarah', 'Charles', 'Karen', 'Christopher', 'Lisa', 'Daniel', 'Nancy', 'Matthew', 'Betty', 'Anthony', 'Sandra', 'Mark', 'Margaret', 'Donald', 'Ashley', 'Steven', 'Kimberly', 'Paul', 'Emily', 'Andrew', 'Donna', 'Joshua', 'Michelle', 'Kenneth', 'Carol', 'Kevin', 'Amanda', 'Brian', 'Melissa', 'George', 'Deborah', 'Timothy', 'Stephanie']
+  const lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez', 'Hernandez', 'Lopez', 'Gonzalez', 'Wilson', 'Anderson', 'Thomas', 'Taylor', 'Moore', 'Jackson', 'Martin', 'Lee', 'Perez', 'Thompson', 'White', 'Harris', 'Sanchez', 'Clark', 'Ramirez', 'Lewis', 'Robinson', 'Walker', 'Young', 'Allen', 'King', 'Wright', 'Scott', 'Torres', 'Nguyen', 'Hill', 'Flores', 'Green', 'Adams', 'Nelson', 'Baker', 'Hall', 'Rivera', 'Campbell', 'Mitchell', 'Carter', 'Roberts']
 
-  const exams = ['JEE', 'NEET', 'UPSC', 'SSC', 'WBJEE']
+  const exams = ['SAT']
   const subjectsMap = {
-    JEE: ['Physics', 'Chemistry', 'Mathematics'],
-    NEET: ['Physics', 'Chemistry', 'Biology'],
-    UPSC: ['History', 'Polity', 'Geography'],
-    SSC: ['Quantitative Aptitude', 'English', 'Reasoning'],
-    WBJEE: ['Physics', 'Chemistry', 'Mathematics']
+    SAT: ['SAT Math', 'SAT Reading', 'SAT Writing & Language']
   }
   const difficulties = ['Beginner', 'Intermediate', 'Advanced']
 
@@ -40,7 +36,7 @@ async function runSeed() {
     const name = `${fName} ${lName}`
     const email = `scholar_${i}@mock.com`
     const id = `mock_user_${i}`
-    const targetExam = exams[Math.floor(Math.random() * exams.length)]
+    const targetExam = 'SAT'
     
     mockUsers.push({ id, name, email, targetExam })
   }
@@ -56,17 +52,17 @@ async function runSeed() {
     let totalXp = 0
     
     for (let j = 0; j < numResults; j++) {
-      const examId = Math.random() < 0.7 ? u.targetExam : exams[Math.floor(Math.random() * exams.length)]
+      const examId = 'SAT'
       const subjects = subjectsMap[examId]
       const subject = subjects[Math.floor(Math.random() * subjects.length)]
       const difficulty = difficulties[Math.floor(Math.random() * difficulties.length)]
       
-      const totalQuestions = 10
-      const correctAnswers = Math.floor(Math.random() * 6) + 4 // 4 to 10 correct
+      const totalQuestions = 5
+      const correctAnswers = Math.floor(Math.random() * 3) + 2 // 2 to 5 correct
       const accuracy = Math.round((correctAnswers / totalQuestions) * 100)
-      const score = correctAnswers * 10
+      const score = correctAnswers * 20
       
-      const xpEarned = 10 + (correctAnswers * 5)
+      const xpEarned = 10 + (correctAnswers * 10)
       totalXp += xpEarned
       
       const date = new Date()

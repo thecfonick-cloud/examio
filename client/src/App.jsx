@@ -157,10 +157,9 @@ export default function App() {
             <div className="hero-overlay" />
           </div>
           <div className="max-w-container-max-width mx-auto text-center z-10 hero-content reveal active">
-            <h1 className="hero-title">Examio Competitive Excellence</h1>
+            <h1 className="hero-title">Examio - Competitive SAT Ranking Platform</h1>
             <p className="hero-subtitle">
-              Challenge yourself, gain ranks, and track your levels in JEE, NEET, UPSC, SSC, and WBJEE. 
-              Built for the dedicated Indian scholar.
+              Compete. Rank. Conquer the SAT. Challenge yourself, gain ranks, and track your levels in SAT Math, SAT Reading, and SAT Writing & Language.
             </p>
             <div className="hero-buttons">
               <button
@@ -190,32 +189,24 @@ export default function App() {
               <div className="feature-card-header">
                 <div className="feature-icon-container">📝</div>
                 <div>
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Core Exam Arenas</h3>
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Core SAT Sections</h3>
                   <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                    Specialized competitive testing modules designed for major Indian standard tracks.
+                    Specialized competitive testing modules designed for major SAT standard tracks.
                   </p>
                 </div>
               </div>
               <div className="tracks-grid">
                 <div className="track-pill-box">
-                  JEE
-                  <span>Engineering</span>
+                  SAT Math
+                  <span>Quantitative</span>
                 </div>
                 <div className="track-pill-box">
-                  NEET
-                  <span>Medical Entrance</span>
+                  SAT Reading
+                  <span>Comprehension</span>
                 </div>
                 <div className="track-pill-box">
-                  UPSC
-                  <span>Civil Services</span>
-                </div>
-                <div className="track-pill-box">
-                  SSC
-                  <span>Govt Placements</span>
-                </div>
-                <div className="track-pill-box">
-                  WBJEE
-                  <span>State Engineering</span>
+                  SAT Writing
+                  <span>Grammar & Style</span>
                 </div>
               </div>
             </div>
@@ -277,8 +268,8 @@ export default function App() {
               <div className="stat-label">Active Fighters</div>
             </div>
             <div className="stat-item reveal">
-              <div className="stat-number">5</div>
-              <div className="stat-label">Target Exam Arenas</div>
+              <div className="stat-number">3</div>
+              <div className="stat-label">Core SAT Sections</div>
             </div>
             <div className="stat-item reveal">
               <div className="stat-number">0.05s</div>
@@ -300,8 +291,8 @@ export default function App() {
                   <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justify: 'center', background: 'var(--primary-light)', fontSize: '1.5rem' }}>👩‍🎓</div>
                 </div>
                 <div>
-                  <h4 className="testimonial-name">Priya Patel</h4>
-                  <div className="testimonial-meta">JEE Engineering Track</div>
+                  <h4 className="testimonial-name">Emily Smith</h4>
+                  <div className="testimonial-meta">SAT Math Section</div>
                   <div className="testimonial-stars">★★★★★</div>
                 </div>
               </div>
@@ -320,16 +311,16 @@ export default function App() {
                   <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justify: 'center', background: 'var(--primary-light)', fontSize: '1.5rem' }}>🧑‍🎓</div>
                 </div>
                 <div>
-                  <h4 className="testimonial-name">Aditya Sharma</h4>
-                  <div className="testimonial-meta">NEET Medical Track</div>
+                  <h4 className="testimonial-name">Alexander Chen</h4>
+                  <div className="testimonial-meta">SAT Reading Section</div>
                   <div className="testimonial-stars">★★★★★</div>
                 </div>
               </div>
               <p className="testimonial-quote">
-                "Success in medical entrances isn't just about reading textbooks; it is about working smart under a timer. Examio helped me identify biology concept gaps. Seeing my rank change live on the exam-wise scoreboard pushed me to strive for the gold medal rank!"
+                "Success in the SAT isn't just about reading passages; it is about working smart under a timer. Examio helped me identify reading comprehension concept gaps. Seeing my rank change live on the section scoreboard pushed me to strive for the top rank!"
               </p>
               <div className="testimonial-metrics">
-                <span>🧬 Biology Track</span>
+                <span>📖 Reading Track</span>
                 <span>✨ +340 XP Gained</span>
               </div>
             </div>
@@ -340,16 +331,16 @@ export default function App() {
                   <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justify: 'center', background: 'var(--primary-light)', fontSize: '1.5rem' }}>👨‍🎓</div>
                 </div>
                 <div>
-                  <h4 className="testimonial-name">Rohan Sen</h4>
-                  <div className="testimonial-meta">UPSC Civil Services Track</div>
+                  <h4 className="testimonial-name">Sarah Jenkins</h4>
+                  <div className="testimonial-meta">SAT Writing Section</div>
                   <div className="testimonial-stars">★★★★★</div>
                 </div>
               </div>
               <p className="testimonial-quote">
-                "The dynamic question injection mimics the unpredictable nature of UPSC. Having detailed explanations immediately after completing the test allowed me to clear doubt loops. I recommend this platform to anyone serious about mock tests."
+                "The dynamic question injection mimics the unpredictable nature of the SAT Writing section. Having detailed explanations immediately after completing the test allowed me to clear grammar doubt loops. I recommend this platform to anyone serious about mock tests."
               </p>
               <div className="testimonial-metrics">
-                <span>📚 Polity & History</span>
+                <span>📝 Writing & Language</span>
                 <span>🏆 Rank #3 Global</span>
               </div>
             </div>
@@ -365,7 +356,7 @@ export default function App() {
                 <span className="logo-text" style={{ color: '#ffffff', WebkitTextFillColor: '#ffffff', background: 'none' }}>Examio</span>
               </div>
               <p style={{ fontSize: '0.8rem', color: '#94A3B8', marginTop: '0.25rem' }}>
-                Dedicated to Indian academic excellence.
+                Dedicated to world-class academic excellence.
               </p>
             </div>
             <div className="footer-links">
